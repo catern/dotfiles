@@ -1,0 +1,43 @@
+# Conky Metro Clock - http://fav.me/d424h9d
+
+# Conky settings
+own_window no
+background no
+update_interval 1
+
+override_utf8_locale yes
+
+no_buffers yes
+
+text_buffer_size 2048
+
+# Window specifications
+own_window_class conky
+own_window_hints undecorate,below,sticky,skip_taskbar,skip_pager
+
+border_inner_margin 0
+border_outer_margin 0
+
+alignment bl
+gap_x 100
+gap_y 100
+
+# Graphics settings
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings
+use_xft yes
+xftalpha 0
+text_buffer_size 2048
+
+uppercase no
+
+default_color FFFFFF
+
+TEXT
+${voffset 10}${font Open Sans Light:size=50}${time %A}${font}${voffset -10}
+${voffset 10}${font Open Sans Light:size=50}${time %B} ${time %e}${font}${voffset -10}
+${voffset 10}${font Open Sans Light:size=100}${time %I:%M %p}${font}${voffset -10}

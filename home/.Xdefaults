@@ -1,0 +1,56 @@
+! scrollback buffer lines - 65535 is max on most machines (64 is default)
+URxvt*saveLines: 512
+
+! font color (default is black)
+URxvt*foreground: White
+
+! background color (prior to tinting) (default is white)
+URxvt*background: Black
+
+! font
+URxvt*font: xft:Ubuntu Mono:pixelsize=16:
+URxvt*boldFont: xft:Ubuntu Mono:bold:pixelsize=16:
+
+! Disable Keycap Picture insert mode:
+URxvt.iso14755_52: false
+! disable some other weird mode
+URxvt.iso14755: false
+
+! Replace blue folder colors with a lighter shade for clarity. To
+!  set colored folders and files within urxvt, xterm, and aterm, add
+!  the following line to your ~/.bashrc ($HOME/.bashrc) file under
+!  the heading "# User specific aliases and functions":
+!   alias ls="ls -h --color=auto"
+Urxvt*color4: RoyalBlue
+URxvt*color12: RoyalBlue
+
+! scrollbar - true (default) or fal
+URxvt*scrollBar: false
+
+! https://github.com/muennich/urxvt-perls
+
+! this does not work
+! URxvt.perl-lib: ~/.urxvt/perl/
+
+URxvt.perl-ext-common: default,url-select,keyboard-select,clipboard,bell-command
+
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: openurl
+
+URxvt.bell-command: notify-send "Beep, Beep"
+
+! lol terminals
+URxvt.keysym.S-Return: \033[27;2;13~
+URxvt.keysym.C-Return: \033[27;5;13~
+URxvt.keysym.C-S-Return: \033[27;6;13~
+xterm*modifyOtherKeys: 1
+! use cat -v to get keysyms from xterm*modifyOtherKeys
+
+Uxxvt.urgentOnBell: True
+
+! escape to escape c-g lol
+!URxvt.keysym.Escape: \033\007

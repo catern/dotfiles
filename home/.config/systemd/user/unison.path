@@ -1,0 +1,6 @@
+[Unit]
+Description=Unison inotify activation
+Before=paths.target
+
+[Path]
+PathChanged=%h/sync/unison

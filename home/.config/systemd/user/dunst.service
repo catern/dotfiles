@@ -1,0 +1,6 @@
+[Unit]
+Description=Dunst notification daemon
+After=dbus.service
+
+[Service]
+ExecStart=/usr/bin/dunst -print

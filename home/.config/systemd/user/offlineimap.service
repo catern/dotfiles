@@ -1,0 +1,11 @@
+[Unit]
+Description=offlineimap daemon
+Wants=dbus.service
+
+[Service]
+WorkingDirectory=%h 
+ExecStart=/usr/bin/offlineimap-notify -c %h/.offlineimaprc
+#send SIGUSR2 to the process so it can gracefully stop syncing
+ExecStop=kill -USR2 $MAINPID
+TimeoutStopSec=10
+Restart=always 

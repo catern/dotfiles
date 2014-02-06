@@ -1,0 +1,9 @@
+$include /etc/inputrc
+set completion-ignore-case On
+set editing-mode vi
+set show-mode-in-prompt on
+set bell-style visible
+
+# if we're about display completions with a common prefix of greater than 12,
+# replace the prefix with an ellipsis
+set completion-prefix-display-length 12

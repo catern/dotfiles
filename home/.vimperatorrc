@@ -1,0 +1,53 @@
+"3.8 (created: 2013/10/13 18:08:56)
+
+command! -description="Open page with mpv" watch :execute "!nohup mpv --force-window " + content.location.href + " &"
+imap <C-k> <Esc><C-k>
+imap <C-j> <Esc><C-j>
+map J <C-Tab>
+map K <C-S-Tab>
+map <C-j> :tabmove<Space>+1<Return>
+map <C-k> :tabmove<Space>-1<Return>
+nmap w :watch<Return><Esc>
+nmap x <C-w>
+set complete=slb
+set "editor=gemx"
+set focuscontent
+set hintinputs=label,name
+" map y :copylink<CR>
+command! -description="Copy link with spaces escaped" copylink :execute ":js util.copyToClipboard(buffer.URL, true);"
+
+"" style
+highlight Boolean color: #f00;
+highlight CmdLine color: #bbb; background: #111; font-family: Inconsolata; font-size: 12px; padding: 0px; vertical-align: middle; border: none;
+highlight CompDesc color: #999; width: 50%;
+highlight CompItem[selected] background: #666;
+highlight CompResult color: #bbb; width: 45%; overflow: hidden;
+highlight CompTitle color: #ddc; background: #111; font-weight: bold;
+highlight CompTitle>* color: #bbb; font-weight: bold; border-top: 1px solid gray; border-bottom: 1px solid #BBB; padding: 1px 0.5ex;
+highlight ContentSeparator border:none;
+highlight ErrorMsg color: #d44; background-color: #111; font-weight: bold; 
+highlight Function color: #04c;
+highlight Hint color: white; background-color: #800; border-color: ButtonShadow; font-family: Inconsolata; font-size: 12px; border-width: 0px; border-style: solid; padding 0 1px;
+highlight HintActive color: black; background: #480;
+highlight HintElem color: black; background-color: #880; 
+highlight InfoMsg color: #ddc; background: #111;
+highlight Keyword color: #CC0;
+highlight LineNr color: orange; background-color: #111;
+highlight ModeMsg color: #ddc; background: #111;
+highlight MoreMsg color: #080; background: #222; font-weight: bold; -moz-border-radius: 5px; padding-left: 5px;
+highlight Normal color: #ddc; background: #111;
+highlight Null color: #00c;
+highlight Number color: #00c;
+highlight Object color: #c40;
+highlight Question color: #080; background: #222; font-weight: bold; -moz-border-radius: 5px; padding-left: 5px;
+highlight StatusLine color: #ddc; background: #111; font-family: Inconsolata; font-size: 14px; margin-top: 1px;
+highlight String color: #0c0;
+highlight TabNumber color: #ddc; font-weight: bold; margin: 0; padding-right: .3ex; text-shadow: #000 -1px 0 0, #000 0 1px 0, #000 1px 0 0, #000 0 -1px 0;
+highlight Tag color: #0CC;
+highlight Title color: #ddc; background: #111; font-weight: bold;
+highlight URL color: #080; text-decoration: none; padding: 0 2px;
+highlight URL:hover color: #880; background-color: #222; -moz-border-radius: 5px; cursor: pointer;
+
+source! /home/spencer/.vimperatorrc.local
+
+" vim: set ft=vimperator:

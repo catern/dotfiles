@@ -13,7 +13,7 @@ set complete=slb
 set "editor=gemx"
 set focuscontent
 set hintinputs=label,name
-" map y :copylink<CR>
+" map y :js util.copyToClipboard(buffer.URL, true);<CR>
 command! -description="Copy link with spaces escaped" copylink :execute ":js util.copyToClipboard(buffer.URL, true);"
 
 "" style

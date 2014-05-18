@@ -1,0 +1,9 @@
+#text/html;                      w3m %s; nametemplate=%s.html
+text/html;                      w3m -dump %s; nametemplate=%s.html; copiousoutput
+text/html;                       firefox -new-tab "%s"; test=test -n "$DISPLAY"
+image/*;                       sxiv "%s"; test=test -n "$DISPLAY"
+video/*;                       mpv "%s"; test=test -n "$DISPLAY"
+application/ogg;                       mpv "%s"; test=test -n "$DISPLAY"
+application/pdf;                       zathura --fork "%s"; test=test -n "$DISPLAY"
+application/octet-stream;                       gemx %s; test=test -n "$DISPLAY"
+text/plain;                       emx %s; 

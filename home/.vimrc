@@ -2,7 +2,6 @@ syntax on
 set encoding=utf-8
 set background=dark
 
-
 let mapleader="\\"
 
 set nocompatible       		  " vim, thank you very much

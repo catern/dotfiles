@@ -1,5 +1,5 @@
 ;;;; config sources
-;https://github.com/technomancy/better-defaults
+                                        ;https://github.com/technomancy/better-defaults
 
 (let ((default-directory "~/.emacs.d/plugins/"))
   (normal-top-level-add-subdirs-to-load-path))
@@ -53,7 +53,7 @@
       ) 
 (setq interprogram-paste-function 'x-selection-value)
 
-; i don't understand what this does, really
+; i don't understand what this does
 (setq mouse-yank-at-point t)
 ; include more things in apropos searches
 (setq apropos-do-all t)
@@ -121,10 +121,15 @@
 
 ;;;; org-mode configuration
 (require 'org)
+
 ; make org-mode work with files ending in .org
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 ; do syntax highlighting in #+begin_src blocks
 (setq org-src-fontify-natively t)
+; org-store-link links to irc logs instead of channel
+(setq org-irc-link-to-logs t)
+
+
 (setq org-agenda-files (list 
                         "~/org/notes.org"
                         "~/org/todo.org"
@@ -134,8 +139,6 @@
                         "~/org/projects/career.org"
                         "~/org/projects/cclub.org"
                         ))
-; org-store-link links to irc logs instead of channel
-(setq org-irc-link-to-logs t)
 
 ;; org-capture
 (require 'org-capture)
@@ -213,10 +216,42 @@
 (setq org-M-RET-may-split-line nil)
 
 ;; autosave in org-mode
-(run-with-timer 0 30 'org-save-all-org-buffers)
+;; (run-with-timer 0 30 'org-save-all-org-buffers)
 
 ;; autorevert in org-mode
 ;; (add-hook 'org-mode-hook 'auto-revert-mode)
+
+;;;; life-logging
+(setq my-buffer-activity-logfile "~/.emacs.d/bufferlog")
+
+(defun my-store-name-of-active-buffer ()
+  "Stores the name of the active buffer in my-buffer-activity-logfile"
+  (interactive)
+  (write-region 
+   (concat (format-time-string "%Y-%m-%d %H:%M:%S") 
+           " "
+           (or (buffer-file-name (current-buffer))
+               (buffer-name (current-buffer))
+               )
+           "\n") 
+   nil my-buffer-activity-logfile 'append 'silent)
+  )
+  
+(defun my-store-lifelog-data ()
+  "Activates all my lifelogging functions"
+  (interactive)
+  (if 
+      (time-less-p 
+       (or 
+        (current-idle-time) 
+        (seconds-to-time 0))
+       (seconds-to-time 5) 
+       )
+  (my-store-name-of-active-buffer))
+)
+
+(setq lifelog-timer (run-with-timer 1 5 'my-store-lifelog-data))
+
 
 
 (custom-set-variables

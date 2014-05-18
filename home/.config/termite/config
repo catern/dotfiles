@@ -1,0 +1,73 @@
+[options]
+resize_grip = false
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = true
+visible_bell = false
+mouse_autohide = true
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = Ubuntu Mono 12
+scrollback_lines = 8192
+search_wrap = true
+
+# 0.0: opaque, 1.0: transparent
+transparency = 0.0
+
+# "system", "on" or "off"
+cursor_blink = off
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default
+browser = openurl
+#browser = firefox
+
+# word characters used for word selection
+# (default if unset: all graphic non-punctuation/space characters)
+#word_chars = -A-Za-z0-9,./?%&#:_=+@~
+
+# set size hints for the window
+#size_hints = false
+
+[colors]
+foreground = #dcdcdc
+foreground_bold = #ffffff
+#foreground_dim = #888888
+background = #000000
+# cursor = #dcdccc
+
+# if unset, will reverse foreground and background
+# highlight = #2f2f2f
+
+# colors from color0 to color254 can be set
+#color0 = #1C1C1C
+#color1 = #D81860
+#color2 = #B7CE42
+#color3 = #FEA63C
+#color4 = #66AABB
+#color5 = #B7416E
+#color6 = #5E7175
+#color7 = #DDEEDD
+#color8 = #4D4D4D
+#color9 = #F00060
+#color10 = #BDE077
+#color11 = #FFE863
+#color12 = #AACCBB
+#color13 = #BB4466
+#color14 = #A3BABF
+#color15 = #6C887A
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: set filetype=dosini :

@@ -44,10 +44,10 @@ URxvt.url-select.launcher: openurl
 URxvt.bell-command: notify-send "Beep, Beep"
 
 ! lol terminals
-URxvt.keysym.S-Return: \033[27;2;13~
-URxvt.keysym.C-Return: \033[27;5;13~
-URxvt.keysym.C-S-Return: \033[27;6;13~
-xterm*modifyOtherKeys: 1
+! URxvt.keysym.S-Return: \033[27;2;13~
+! URxvt.keysym.C-Return: \033[27;5;13~
+! URxvt.keysym.C-S-Return: \033[27;6;13~
+! xterm*modifyOtherKeys: 1
 ! use cat -v to get keysyms from xterm*modifyOtherKeys
 
 Uxxvt.urgentOnBell: True

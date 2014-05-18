@@ -7,5 +7,4 @@ if [ "$SHLVL" = 1 ]; then
 fi
 
 # invalidates cached sudo credentials
-# commented because i'm not sure if that's portable
-#sudo -k
+sudo -k

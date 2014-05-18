@@ -1,0 +1,5 @@
+[push]
+	default = simple
+
+[include]
+        path = ~/.config/git/local.conf

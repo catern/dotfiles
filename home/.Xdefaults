@@ -28,9 +28,7 @@ URxvt*color12: RoyalBlue
 URxvt*scrollBar: false
 
 ! https://github.com/muennich/urxvt-perls
-
-! this does not work
-! URxvt.perl-lib: ~/.urxvt/perl/
+! placed into ~/.urxvt/ext
 
 URxvt.perl-ext-common: default,url-select,keyboard-select,clipboard,bell-command
 

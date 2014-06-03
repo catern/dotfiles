@@ -109,5 +109,6 @@ autocmd BufNewFile,BufRead *.dot set makeprg=dot\ -Tpng\ %\ >\ %.png
 autocmd BufNewFile,BufRead *.scm set makeprg=rlwrap\ guile\ -l\ %
 autocmd BufNewFile,BufRead *.c set makeprg=gcc\ -g\ %
 
-:call system('touch ' . '~/.vim/local.vim')
+silent !mkdir -p ~/.vim/backup
+call system('touch ' . '~/.vim/local.vim')
 so ~/.vim/local.vim

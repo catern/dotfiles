@@ -1,6 +1,9 @@
 ;;;; config sources
-                                        ;https://github.com/technomancy/better-defaults
+;https://github.com/technomancy/better-defaults
+; list the packages you want
+(setq my-package-list '(evil cyberpunk-theme))
 
+(mkdir "~/.emacs.d/plugins/" t)
 (let ((default-directory "~/.emacs.d/plugins/"))
   (normal-top-level-add-subdirs-to-load-path))
 
@@ -11,6 +14,15 @@
         ("melpa" . "http://melpa.milkbox.net/packages/")))
 (setq package-enable-at-startup nil)
 (package-initialize)
+
+; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
+
+; install the missing packages
+(dolist (package my-package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 ;;;; visuals
 (load-theme 'cyberpunk t)
@@ -126,53 +138,7 @@
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 ; do syntax highlighting in #+begin_src blocks
 (setq org-src-fontify-natively t)
-; org-store-link links to irc logs instead of channel
-(setq org-irc-link-to-logs t)
 
-
-(setq org-agenda-files (list 
-                        "~/org/notes.org"
-                        "~/org/todo.org"
-
-                        "~/org/projects/projects.org"
-                        "~/org/projects/school.org"
-                        "~/org/projects/career.org"
-                        "~/org/projects/cclub.org"
-                        ))
-
-;; org-capture
-(require 'org-capture)
-(setq org-default-notes-file (concat org-directory "/notes.org"))
-(define-key global-map "\C-cc" 'org-capture)
-(setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
-         "* TODO %?\n  %i\n")
-        ("j" "Journal" entry (file+datetree "~/org/journal.org")
-         "* %?\n%U\n  %i\n")
-        ("n" "Note" entry (file "~/org/notes.org")
-         "* %? \n%U\n%a\n")))
-
-(define-minor-mode org-capture-popup-mode
-  "For use when org-capture is triggered by an external keybind"
-  :init-value nil
-  :lighter " Popup"
-  :keymap (make-sparse-keymap)
-)
-
-(defun org-capture-popup-finalize-and-delete-frame () 
-  (interactive) (org-capture-finalize) (delete-frame))
-(defun org-capture-popup-kill-and-delete-frame ()
-  (interactive) (org-capture-kill) (delete-frame))
-
-(define-key org-capture-popup-mode-map 
-  (kbd "C-c C-c")
-  'org-capture-popup-finalize-and-delete-frame)
-
-(define-key org-capture-popup-mode-map 
-  (kbd "C-c C-k") 
-  'org-capture-popup-kill-and-delete-frame)
-
-(add-hook 'org-capture-mode-hook 'evil-insert-state)
 
 ;; evil and org mode
 (evil-define-key 'normal org-mode-map 
@@ -199,27 +165,6 @@
           (kbd "M-J") 'org-shiftmetadown))
       '(normal insert))
 
-;; org-protocol
-(require 'org-protocol)
-
-;; org-archive
-(setq org-archive-location "archive/%s_archive::")
-
-;; org-refile
-(setq my-org-projects-dir (expand-file-name "~/org/projects"))
-
-(setq my-org-refile-targets (directory-files my-org-projects-dir t ".*\.org$"))
-(setq org-refile-targets (list (cons my-org-refile-targets (cons :maxlevel 1))))
-; put the file in the refile thing
-(setq org-refile-use-outline-path 'file)
-(load-file "~/.emacs.d/local.el")
-(setq org-M-RET-may-split-line nil)
-
-;; autosave in org-mode
-;; (run-with-timer 0 30 'org-save-all-org-buffers)
-
-;; autorevert in org-mode
-;; (add-hook 'org-mode-hook 'auto-revert-mode)
 
 ;;;; life-logging
 (setq my-buffer-activity-logfile "~/.emacs.d/bufferlog")
@@ -252,6 +197,14 @@
 
 (setq lifelog-timer (run-with-timer 1 5 'my-store-lifelog-data))
 
+
+;; local.el
+(setq my-local-config-file  "~/.emacs.d/local.el")
+
+(unless (file-exists-p my-local-config-file)
+  (write-region "" nil my-local-config-file)) 
+
+(load-file my-local-config-file)
 
 
 (custom-set-variables

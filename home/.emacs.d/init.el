@@ -55,15 +55,15 @@
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (concat user-emacs-directory "saved-positions")) 
-; spaces instead of tabs
-(setq-default indent-tabs-mode nil)
 ; use X11 clipboard when in graphical mode
 (setq x-select-enable-clipboard t
       ;x-select-enable-primary t
       ; put existing X selection in kill ring
       save-interprogram-paste-before-kill t
       ) 
-(setq interprogram-paste-function 'x-selection-value)
+;; when not compiled with X, this won't be bound
+(if (fboundp 'x-selection-value) 
+    (setq interprogram-paste-function 'x-selection-value))
 
 ; i don't understand what this does
 (setq mouse-yank-at-point t)
@@ -92,6 +92,14 @@
       kept-old-versions 2
       version-control t) ; use versioned backups
 (make-directory "~/.emacs.d/autosaves/" t)
+
+;;;; C mode
+(setq comment-style 'extra-line)
+(setq c-default-style 
+      '((c-mode . "linux") 
+	(java-mode . "java")
+	(awk-mode . "awk")
+	(other . "gnu")))
 
 ;;;; tramp
 (require 'tramp) 

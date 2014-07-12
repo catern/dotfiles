@@ -1,0 +1,14 @@
+[push]
+	default = simple
+
+[include]
+        path = ~/.config/git/local.conf
+	
+[alias]
+  s = status
+  c = commit
+  a = add
+  d = diff
+  br = branch
+  co = checkout
+  lg = log -p

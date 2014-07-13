@@ -1,0 +1,3 @@
+#!/bin/bash
+set -o errexit
+xsel | xclip -i -selection clipboard

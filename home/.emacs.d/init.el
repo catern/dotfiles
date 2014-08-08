@@ -1,48 +1,54 @@
 ;;;; config sources
-;https://github.com/technomancy/better-defaults
-; list the packages you want
-(setq my-package-list '(evil cyberpunk-theme))
+; https://github.com/technomancy/better-defaults
 
-(mkdir "~/.emacs.d/plugins/" t)
-(let ((default-directory "~/.emacs.d/plugins/"))
-  (normal-top-level-add-subdirs-to-load-path))
-
+;;;; bootstrap packages
 (require 'package)
+
+;; add necessary repos
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
         ("marmalade" . "http://marmalade-repo.org/packages/")
         ("melpa" . "http://melpa.milkbox.net/packages/")))
-(setq package-enable-at-startup nil)
+
+;; start the package system
 (package-initialize)
 
-; fetch the list of packages available 
-(unless package-archive-contents
+;; load the list of packages available (if necessary)
+(unless package-archive-contents 
   (package-refresh-contents))
 
-; install the missing packages
+;; list the packages I want
+(setq my-package-list '(evil cyberpunk-theme))
+
+;; install the missing packages
 (dolist (package my-package-list)
   (unless (package-installed-p package)
     (package-install package)))
 
+;; stop emacs from starting the package system again after
+;; finishing reading init.el
+(setq package-enable-at-startup nil)
+
 ;;;; visuals
+;; enable cyberpunk theme yeah!
 (load-theme 'cyberpunk t)
-; enable syntax highlighting
+;; enable syntax highlighting
 (global-font-lock-mode t)
 (transient-mark-mode 1)
-; scroll incrementally, not screenfulls at a time
+;; scroll incrementally, not screenfulls at a time
 (setq scroll-step 1)
-; menubar, toolbar, scrollbar off
+;; menubar, toolbar, scrollbar off
 (menu-bar-mode -1)
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
-; show matching parens
+;; show matching parens
 (show-paren-mode 1)
 
 ;;;; miscellaneous
 ; don't cry about visiting my version controlled dotfiles
-(setq vc-follow-symlinks t)
+(setq vc-follow-symlinks nil)
 ; better completions
 (ido-mode t)
 (setq ido-enable-flex-matching t)
@@ -223,6 +229,8 @@
  '(Man-notify-method (quote bully))
  '(custom-safe-themes (quote ("7fa9dc3948765d7cf3d7a289e40039c2c64abf0fad5c616453b263b601532493" "dc6c0b236bb09603babadd87329aa857e286ee36715811519d4bfe6278ee4367" default)))
  '(org-enforce-todo-dependencies t)
+ '(safe-local-variable-values (quote ((sh-indent-comment . t))))
+ '(send-mail-function (quote sendmail-send-it))
  '(undo-tree-auto-save-history t)
  '(undo-tree-history-directory-alist (quote (("." . "~/.emacs.d/undo-tree-persist")))))
 (custom-set-faces

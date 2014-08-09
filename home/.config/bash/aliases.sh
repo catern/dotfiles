@@ -8,7 +8,6 @@ alias e='emx'
 alias atch='tmux attach -d'
 alias dup='nohup urxvt >> ~/.urxvt/nohup.out &'
 
-alias -='cd -'
 alias ..='cd ..'
 alias ....='cd ../..'
 alias ......='cd ../../..'

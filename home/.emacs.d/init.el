@@ -36,7 +36,7 @@
 (global-font-lock-mode t)
 (transient-mark-mode 1)
 ;; scroll incrementally, not screenfulls at a time
-(setq scroll-step 1)
+(setq scroll-conservatively 1000)
 ;; menubar, toolbar, scrollbar off
 (menu-bar-mode -1)
 (when (fboundp 'tool-bar-mode)

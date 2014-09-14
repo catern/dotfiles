@@ -34,6 +34,7 @@
 (load-theme 'cyberpunk t)
 ;; enable syntax highlighting
 (global-font-lock-mode t)
+;; show selection
 (transient-mark-mode 1)
 ;; scroll incrementally, not screenfulls at a time
 (setq scroll-conservatively 1000)

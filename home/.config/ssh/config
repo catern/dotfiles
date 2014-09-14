@@ -5,7 +5,3 @@ Host *
     ControlPath /tmp/%r@%h:%p
     # leave the connection open after the last shell closes
     ControlPersist 10m
-    # try to authenticate using kerberos tickets
-    GSSAPIAuthentication yes
-    # forward any forwardable tickets to the remote shell
-    GSSAPIDelegateCredentials yes

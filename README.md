@@ -1,8 +1,11 @@
 These are my dotfiles. 
 They are full of dot and files.
-I use this on all my machines; laptop, desktop, servers, shell accounts, everywhere.
-So I avoid putting hardware-specific or system-specific configuration into this repo;
-I don't necessarily have root everywhere I use it.
+
+I use these dotfiles on all my machines; laptop, desktop, servers, shell accounts, everywhere.
+
+So I avoid putting hardware-specific or system-specific configuration into this repo,
+as I don't necessarily have root everywhere I use it.
+
 ## .config
 I endeavour to move as many files into .config as I can,
 to comply with the [XDG Base Directory Specification](http://www.freedesktop.org/software/systemd/man/file-hierarchy.html#Home%20Directory).
@@ -12,18 +15,23 @@ for example, instead of editing /etc/sudoers directly, many distros now support 
 I try to emulate this in my personal configs.
 
 ### bash
-This is most noticeable in the way I structure my bash configuration.
+The drop-in configs approach is most noticeable in the way I organize my bash configuration.
+
 My .bashrc just does a few things, and then sources the contents of the .config/bash directory.
 In .config/bash are different files setting up my prompt, aliases, etc.
+
 This way if I have some local configuration that I don't want to push to this shared dotfiles repository,
 I can just drop a local.sh file in .config/bash, and everything just works.
 
 ### xinit
 I also try to keep my .xinitrc modular.
+
 xinitrc usually consists of a list of programs to run after X is started through startx.
+
 I have several small scripts in the .config/xinit directory
 which I can run from a local, not-committed .xinitrc.
-Each script is just a list of commands to run.
+Each script is just a list of commands to run,
+and I put lines sourcing some selection of scripts in my .xinitrc.
 
 Unfortunately, I run very few X11 programs on startup,
 so the files in .config/xinit are very small.

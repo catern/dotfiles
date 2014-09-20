@@ -1,7 +1,7 @@
 # append to the history file, don't overwrite it
 shopt -s histappend
-# make a large history of 1MB
-export HISTSIZE=1000000
+# make a large history of 10MB
+export HISTSIZE=10000000
 # the difference between HISTSIZE and HISTFILESIZE is pointless
 # define HISTFILESIZE to have the value that HISTSIZE currently has
 # this will not adjust HISTFILESIZE if HISTSIZE changes, it's just a more DRY way to say

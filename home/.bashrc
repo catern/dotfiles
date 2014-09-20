@@ -17,9 +17,6 @@ stty stop ''
 stty -ixon 
 stty -ixoff
 
-# make any executables in .local/bin available for command-line use
-export PATH=$PATH:~/.local/bin
-
 # include any supplementary configs present in .config/bash
 # this simplifies management of a large .bashrc
 MY_BASH_LOCAL_CONFIG_DIR=~/.config/bash

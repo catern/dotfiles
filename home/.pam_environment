@@ -1,0 +1,5 @@
+# put go bin/ pkg/ src/ in .local
+GOPATH OVERRIDE=${PATH}:${HOME}/.local
+
+# make any executables in .local/bin available for command-line use
+PATH OVERRIDE=${PATH}:${HOME}/.local/bin

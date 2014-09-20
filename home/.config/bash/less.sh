@@ -1,4 +1,4 @@
-# move less history file
+# put less search history not in my home directory
 export LESSHISTFILE=~/.local/share/less/history
 
 # colorize less output (now man is pretty)

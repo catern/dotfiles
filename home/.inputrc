@@ -1,9 +1,14 @@
+# -*- mode: conf-space; -*-
+# include system-level inputrc
 $include /etc/inputrc
+# ignore alphabetic case when completing
 set completion-ignore-case On
+# use a vi-style line editing mode
 set editing-mode vi
+# show the current editing mode at the start of the prompt
 set show-mode-in-prompt on
+# flash the screen instead of sending a terminal bell (which beeps)
 set bell-style visible
-
 # if we're about display completions with a common prefix of greater than 12,
 # replace the prefix with an ellipsis
 set completion-prefix-display-length 12

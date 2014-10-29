@@ -18,7 +18,11 @@
   (package-refresh-contents))
 
 ;; list the packages I want
-(setq my-package-list '(evil cyberpunk-theme magit))
+(setq my-package-list '(evil 
+			cyberpunk-theme 
+			magit 
+			;; for org HTML export
+			htmlize))
 
 ;; install the missing packages
 (dolist (package my-package-list)

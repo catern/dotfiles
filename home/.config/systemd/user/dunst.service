@@ -4,3 +4,6 @@ After=dbus.service
 
 [Service]
 ExecStart=/usr/bin/dunst -print
+
+[Install]
+WantedBy=default.target

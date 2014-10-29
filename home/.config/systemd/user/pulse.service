@@ -6,3 +6,6 @@ Requires=dbus.service
 RemainAfterExit=yes
 ExecStart=/usr/bin/pulseaudio --start
 ExecStop=/usr/bin/pulseaudio --kill
+
+[Install]
+WantedBy=default.target

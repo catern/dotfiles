@@ -4,3 +4,6 @@ Before=paths.target
 
 [Path]
 PathChanged=%h/sync/unison
+
+[Install]
+WantedBy=default.target

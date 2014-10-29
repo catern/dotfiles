@@ -5,3 +5,6 @@ After=pulse.service
 [Service]
 ExecStart=/usr/bin/mpd %h/.config/mpd/mpd.conf --no-daemon
 ExecStop=/usr/bin/mpd --kill
+
+[Install]
+WantedBy=default.target

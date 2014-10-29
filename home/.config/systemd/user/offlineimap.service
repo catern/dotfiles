@@ -9,3 +9,6 @@ ExecStart=/usr/bin/offlineimap-notify -c /%h/.offlineimaprc
 ExecStop=kill -USR2 $MAINPID
 TimeoutStopSec=10
 Restart=always 
+
+[Install]
+WantedBy=default.target

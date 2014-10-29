@@ -6,3 +6,6 @@ RemainAfterExit=yes
 ExecStart=/usr/bin/tmux start-server
 ExecStop=/usr/bin/tmux kill-server
 WorkingDirectory=%h 
+
+[Install]
+WantedBy=default.target

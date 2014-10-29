@@ -7,3 +7,6 @@ WorkingDirectory=%h
 ExecStart=/usr/bin/transmission-daemon -f
 TimeoutStopSec=3
 Restart=always 
+
+[Install]
+WantedBy=default.target

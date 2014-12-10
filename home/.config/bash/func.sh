@@ -12,5 +12,6 @@ function dirnamec() { dirname "$(readlink -f $*)"; }
 # go to the parent directory of a file (including a symlink)
 function cdl() { cd "$(dirnamec "$*")"; }
 
-
 function magit() { emacsclient -e -qt "(magit-status \"$(pwd)\" 'switch-to-buffer)"; }
+
+function nme() { emacsclient -e -qc "(notmuch)" & }

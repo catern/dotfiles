@@ -2735,12 +2735,7 @@ sub got_key {
 
     } elsif ($mode == M_INS) {
 
-        if ($key == 3) { # Ctrl-C enters command mode
-            _update_mode(M_CMD);
-            _stop();
-            return;
-
-        } elsif ($key == 10) { # enter.
+        if ($key == 10) { # enter.
             _commit_line();
 
         } elsif ($input_buf_enabled and $imap) {

@@ -57,6 +57,8 @@
 ; better completions
 (ido-mode t)
 (setq ido-enable-flex-matching t)
+; newline at EOF
+(setq require-final-newline t)
 ; if visiting two different files with the same name,
 ; label the buffer with the full path
 ; instead of name<1> name<2>

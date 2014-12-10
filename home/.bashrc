@@ -12,8 +12,6 @@ shopt -s checkwinsize
 #set -o noclobber
 
 # disable flow control so we can use Ctrl-Q and Ctrl-S
-stty start ''
-stty stop ''
 stty -ixon 
 stty -ixoff
 

@@ -1,0 +1,16 @@
+# cjd
+Host *.cjd
+    CanonicalizeHostname yes
+    CanonicalDomains catern.com
+
+# CClub hosts
+Host *.club
+    CanonicalizeHostname yes
+    CanonicalDomains cc.cmu.edu
+
+Host *.club.cc.cmu.edu
+    # try to authenticate using kerberos tickets
+    GSSAPIAuthentication yes
+    # forward any forwardable tickets to the remote shell
+    GSSAPIDelegateCredentials yes
+    

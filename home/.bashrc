@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+
 ### Misc
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

@@ -3,6 +3,7 @@
 
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
+fi
 
 ### Misc
 # check the window size after each command and, if necessary,

@@ -11,11 +11,11 @@
 #
 # I can use the following command to write out the dconf database
 # recursively as plain text, starting from the root:
-# dconf dump / > ~/.config/gnome/everything.conf
+# dconf dump / > ~/.config/dconf/user.d/everything.conf
 #
 # If I modify those key-value pairs or move to a new machine, and want
 # to load them back in, I use:
-# cat ~/.config/gnome/* | dconf load /
+# cat ~/.config/dconf/user.d/* | dconf load /
 #
 # Of course, most of the settings in dconf are irrelevant to me, or
 # are machine specific, so I want to find the ones that I actually

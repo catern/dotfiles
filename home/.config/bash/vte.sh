@@ -1,7 +1,8 @@
-# vte terminals only set COLORTERM so some things don't see them as
-# being able to take 256colors
-
-if [ "$COLORTERM" == "gnome-terminal" ] || [ "$COLORTERM" == "xfce4-terminal" ]
+# For a long time VTE set TERM=xterm by default, so terminal
+# applications avoided using 256colors. Detect VTE and set an
+# appropriate TERM value.
+# This is fixed upstream now, but not yet packaged.
+if [ -n "$VTE_VERSION" ] || [ -n "$COLORTERM" ]
 then
     TERM=xterm-256color
 fi

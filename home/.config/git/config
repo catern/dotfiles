@@ -17,3 +17,4 @@
   br = branch
   co = checkout
   lg = log -p
+  l = log

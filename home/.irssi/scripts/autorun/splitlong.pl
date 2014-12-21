@@ -54,7 +54,7 @@ sub sig_command_msg {
 	}
 }
 
-Irssi::settings_add_int('misc', 'splitlong_max_length', 0);
+Irssi::settings_add_int('misc', 'splitlong_max_length', 300);
 Irssi::settings_add_str('misc', 'splitlong_line_start', "... ");
 Irssi::settings_add_str('misc', 'splitlong_line_end', " ...");
 Irssi::command_bind('msg', 'sig_command_msg');

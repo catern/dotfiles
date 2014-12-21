@@ -1,9 +1,14 @@
 [push]
 	default = simple
 
+[sendemail]
+# automatically pass proper flags to sendmail to use the correct
+# account based on the From field
+	envelopesender = auto
+
 [include]
         path = ~/.config/git/local.conf
-	
+
 [alias]
   s = status
   c = commit

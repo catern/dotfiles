@@ -1,6 +1,6 @@
-alias clubkl='kinit -l 10d sbaugh@CLUB.CC.CMU.EDU && aklog club.cc.cmu.edu'
-alias clubadminkl='kinit -l 10d sbaugh/admin@CLUB.CC.CMU.EDU && aklog club.cc.cmu.edu'
-alias kl='kinit -l 10d sbaugh@ANDREW.CMU.EDU && aklog andrew.cmu.edu'
+alias clubkl='kinit -l 10d $USER@CLUB.CC.CMU.EDU && aklog club.cc.cmu.edu'
+alias clubadminkl='kinit -l 10d $USER/admin@CLUB.CC.CMU.EDU && aklog club.cc.cmu.edu'
+alias kl='kinit -l 10d $USER@ANDREW.CMU.EDU && aklog andrew.cmu.edu'
 
 alias g='git'
 alias e='emx'

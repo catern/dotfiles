@@ -16,8 +16,14 @@ shopt -s checkwinsize
 #set -o noclobber
 
 # disable flow control so we can use Ctrl-Q and Ctrl-S
-stty -ixon 
+stty -ixon
 stty -ixoff
+
+# to add additional commands to my PROMPT_COMMAND by appending '|| command', it needs to be guaranteed-initialized
+if [ -z "$PROMPT_COMMAND" ];
+then
+    export PROMPT_COMMAND="eval";
+fi
 
 # include any supplementary configs present in .config/bash
 # this simplifies management of a large .bashrc

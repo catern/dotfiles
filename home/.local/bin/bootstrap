@@ -1,4 +1,8 @@
 #!/bin/bash
+# load ssh config
+mkdir -p ~/.ssh
 cat ~/.config/ssh/* > ~/.ssh/config
 chmod 644 ~/.ssh/config
+
+# load GNOME config
 cat ~/.config/dconf/user.d/* | dconf load /

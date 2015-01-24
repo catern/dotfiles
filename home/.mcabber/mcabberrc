@@ -1,0 +1,226 @@
+# -*- mode: conf -*-
+
+# IQ settings
+# Set iq_version_hide_os to 1 if you do not want to allow people to retrieve
+# your OS version.
+set iq_version_hide_os = 1
+
+# Set iq_version_hide_version to 1 if you do not want to allow people to
+# retrieve your mcabber version.
+set iq_version_hide_version = 1
+#
+# Set iq_time_hide to 1 if you do not want to allow people to retrieve
+# your OS time.
+# set iq_time_hide = 1
+
+# Set iq_last_disable to 1 if you want to disable response to jabber:iq:last
+# queries (XEP-0012).  Set iq_last_disable_when_notavail to 1 if you want
+# to disable Last Activity reports only when the not-available status is set.
+# (Default is 0 for both options)
+set iq_last_disable = 1
+set iq_last_disable_when_notavail = 1
+
+# Set iq_hide_requests to 1 if you don't want received IQ requests to be
+# displayed in the status window (default: 0).
+set iq_hide_requests = 1
+
+# By default, mcabber adds a leading space before each buddy in the roster. You
+# can remove it to gain a little space.
+set roster_no_leading_space = 1
+
+# By default command line completion is case-sensitive; this can be changed
+# by setting the option 'completion_ignore_case' to 1.
+set completion_ignore_case = 1
+
+# Typing notifications, Chat States, Events (XEP-22/85)
+# Set disable_chatstates to 1 if you don't want to use typing notifications.
+# Note: changing this option once mcabber is running has no effect.
+#set disable_chatstates = 0
+
+# Beep
+# Set beep_on_message to 1 if you want mcabber to beep when receiving
+# a new message (except in chatrooms).  If you want a more sophisticated
+# system (e.g. play a sound), have a look at 'events_command' below.
+set beep_on_message = 1
+
+# URL extractor
+# Set 'url_regex' to a regular expression matching urls.  If it matches an
+# url in an incoming messages, it'll print it to the log window.
+# Don't forget to load the urlregex module if you plan to use this feature!
+set url_regex = "(((https?|ftps?|nntp)://)|www[.][-a-z0-9.]+|(mailto:|news:))(%[0-9A-F]{2}|[-_.!~*';/?:@&=+$,#[:alnum:]])+"
+module load urlregex
+
+# FIFO
+# mcabber can create a FIFO named pipe and listen to this pipe for commands.
+# Don't forget to load the FIFO module if you plan to use this feature!
+# Default: disabled.
+# Set 'fifo_hide_commands' to 1 if you don't want to see the FIFO commands
+# in the log window (they will still be written to the tracelog file).
+# When FIFO  is configured, you can turn it off and on in real time with
+# the 'fifo_ignore' option (default: 0).  When set to 1, the FIFO input is
+# still read but it is discarded.
+# set fifo_name = ~/.mcabber/mcabber.fifo
+# set fifo_hide_commands = 0
+# set fifo_ignore = 0
+
+# module load fifo
+
+# Set the auto-away timeout, in seconds.  If set to a value >0,
+# mcabber will change your status to away if no real activity is detected
+# (command, message, move in the buddylist...).  Note: auto-away only changes
+# the status when it is "available" (online) or "free_for_chat".
+# See 'message_autoaway' below.
+#set autoaway = 0
+
+# The auto-away message is only used when 'autoaway' is set.  The previous
+# message will be restored when leaving auto-away status.  If this message
+# isn't defined, the status message will stay unchanged.
+set message_autoaway = Auto-away (idle)
+
+# Escape timeout delay (ESCDELAY)
+# The ESCDELAY variable specifies the time, in milliseconds, for which
+# the ncurses interface will await a character sequence.
+# The default is 1000 (1 second).
+# If you want mcabber to react faster after hitting Escape, you can lower
+# this value by setting the ESCDELAY environment variable or setting the
+# 'escdelay' option.
+set escdelay = 50
+
+## History logging
+# You can save the messages history: set logging = 1
+# Set 'logging_ignore_status' to 1 if you do not want to save status changes
+# (and status messages) to the log files (default: 0).
+# You can load (read) the messages history: set load_logs = 1
+# If you enable load_logs, you can use the 'max_history_age' setting below.
+# Default logging directory (logging_dir) is $HOME/.mcabber/histo/
+# Defaults for logging, load_logs are 0 (disabled)
+# Note: the logging directory must exist if you enable logging, mcabber
+#       will not create it.
+# Note: these options, except 'max_history_age' and 'max_history_blocks',
+# are used at startup time.
+set logging = 1
+set load_logs = 1
+set logging_dir = ~/.mcabber/histo/
+#set logging_ignore_status = 1
+
+# Set log_muc_conf to 1 to enable MUC chatrooms logging (default = 0)
+set log_muc_conf = 1
+# Set load_muc_logs to 1 to read MUC chatrooms logs (default = 0).  These
+# logs will be displayed in the buffer window _before_ any history received
+# from the server.
+set load_muc_logs = 0
+
+# When load_logs (or load_muc_logs) is enabled, you can specify a maximum
+# number of history days to load into memory with max_history_age.
+# Default = 0 (disabled -- everything is loaded)
+# Note: this option is only used when reading history files, not later.
+set max_history_age = 2
+
+# mcabber can store the list of unread messages in a state file,
+# so that the message flags are set back at next startup.
+# Note that 'logging' must be enabled for this feature to work.
+set statefile = ~/.mcabber/mcabber.state
+
+# You can specify a maximum number of data blocks per buffer (1 block contains
+# about 8kB).  The default is 0 (unlimited).  If set, this value must be > 2.
+set max_history_blocks = 8
+
+# Style
+# Note: the 'log_win_height' and 'roster_width' values below can be set
+# in real time when mcabber is running.  Refresh the screen (Ctrl-l) to
+# use the new values.
+#
+# Log window height (minimum 1, default 5)
+#set log_win_height = 5
+# Buddylist window width (minimum 2, default 24)
+#set roster_width=24
+#
+# The options 'log_win_on_top' and 'roster_win_on_right' can change the
+# position of the log window (top/bottom) and the position of the roster
+# (left/right).
+set log_win_on_top = 1
+#set roster_win_on_right = 1
+
+# By default, the displayed name of a contact in the roster window will
+# be the JID if no name has been specified.  You can use the following
+# option if you only want to see the username part.
+#set roster_hide_domain = 0
+
+# When a contact sends "/me ", mcabber displays "*user ", where user
+# is the local part of the contact's JID.
+# If you want mcabber to display the complete bare JID (user@server.com),
+# set 'buddy_me_fulljid' to 1 (default: 0)
+#set buddy_me_fulljid = 1
+#
+# Display the status changes in the log window (default: 0, never)
+set log_display_presence = 1
+
+# Display the status changes in the chat buffers (default: 0, never)
+# Values:  0: never  1: only connect/disconnect  2: all
+set show_status_in_buffer = 1
+
+# Set 'log_display_sender' to 1 to display the message sender's JID in the
+# log window (default: 0, no)
+set log_display_sender = 1
+
+# Set 'info' to anything you'd like to see in your lower status line.
+#set info = woot
+#
+# Automatic locking on buddy resource that messages are coming from.
+# Useful when your buddies are chatting from their non-highest priority
+# resources, forcing you to use /say_to command.
+set roster_autolock_resource = 1
+
+# Automatic locking of buffer when scrolled up, and unlocking when scrolled
+# to bottom.
+set buffer_smart_scrolling = 1
+
+# Set 'ignore_self_presence' to 1 if you do not want to see your own
+# presence in your roster (default: 0).
+set ignore_self_presence = 1
+
+# History
+# Number of lines to remember for the command line history
+# (default: 0, unlimited).
+set cmdhistory_lines = 250
+
+# Aspell
+set spell_enable = 1
+set spell_lang = en_US
+set spell_encoding = iso8859-1
+set spell_encoding = UTF-8
+
+## Aliases
+alias me = say /me
+alias online   = status online
+alias away     = status away
+alias dnd      = status dnd
+alias notavail = status notavail
+#alias names = room names
+#alias topic = room topic
+# Sample alias to join mcabber channel with "/jmc"
+alias jmc = room join mcabber@conf.lilotux.net
+
+# Set use_mouse to 1 to map mouse buttons like keycodes.
+#set use_mouse = 1
+
+## Key bindings
+# C-n
+bind 14 = roster down
+# C-p
+bind 16 = roster up
+# M-p
+bind M112 = buffer up
+# M-n
+bind M110 = buffer down
+# Ctrl-q (17) bound to /roster unread_next
+bind 17 = roster unread_next
+# Ctrl-x (24) bound to /roster alternate
+bind 24 = roster alternate
+# F5 (269) bound to /roster toggle_offline  (centericq-like, IIRC)
+bind 269 = roster toggle_offline
+# F12 (276) bound to /roster toggle
+bind 276 = roster toggle
+
+source ~/.mcabber/account.conf
+source ~/.mcabber/local.conf

@@ -53,7 +53,7 @@
 
 ;;;; miscellaneous
 ; highlight trailing whitespace
-(setq-default show-trailing-whitespace t)
+;; (setq-default show-trailing-whitespace t)
 ; don't cry about visiting my version controlled dotfiles
 (setq vc-follow-symlinks nil)
 ; better completions

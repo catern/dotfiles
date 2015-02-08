@@ -1,4 +1,4 @@
-These are my dotfiles. 
+These are my dotfiles.
 They are full of dot and files.
 
 I use these dotfiles on all my machines; laptop, desktop, servers, shell accounts, everywhere.
@@ -24,7 +24,7 @@ This way if I have some local configuration that I don't want to push to this sh
 I can just drop a local.sh file in .config/bash, and everything just works.
 
 ### xinit
-I also try to keep my .xinitrc modular. 
+I also try to keep my .xinitrc modular.
 xinitrc usually consists of a list of programs to run after X is started through startx.
 
 I have several small scripts in the .config/xinit directory
@@ -42,6 +42,10 @@ A better solution would be running these commands as systemd --user services tha
 Eventually systemd --user sessions will become more widely used to start and manage a user's DE, WM, and other X services.
 At that point I will be able to just commit these X startup commands as .service files,
 and systemctl --user enable/disable them locally.
+
+### dconf (GNOME)
+
+I've written a blog post [here](http://catern.com/2014/12/21/plain-text-configuration-gnome.html) about the approach I take for dconf.
 
 ### systemd
 I use [systemd --user sessions](https://wiki.archlinux.org/index.php/Systemd/User)

@@ -27,4 +27,5 @@ _bash_history_sync() {
 # }
 
 # execute the history syncing function every time a command finishes (and we see the prompt)
-export PROMPT_COMMAND="$PROMPT_COMMAND || _bash_history_sync"
+# LOL HOW DO I RELIABLY APPEND TO PROMPT_COMMAND
+export PROMPT_COMMAND="{ $PROMPT_COMMAND }; _bash_history_sync;"

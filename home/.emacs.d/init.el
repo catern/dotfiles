@@ -84,9 +84,6 @@
 (require 'tramp) 
 (setq tramp-default-method "ssh")
 
-;;;; latex
-(setq TeX-PDF-mode t)
-
 ;;;; evil configuration
 (require 'undo-tree)
 (require 'evil)

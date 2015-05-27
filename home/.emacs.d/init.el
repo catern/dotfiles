@@ -143,8 +143,6 @@
 ;;;; org-mode configuration
 (require 'org)
 
-; make org-mode work with files ending in .org
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 ; do syntax highlighting in #+begin_src blocks
 (setq org-src-fontify-natively t)
 

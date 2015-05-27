@@ -51,6 +51,6 @@ highlight Title color: #ddc; background: #111; font-weight: bold;
 highlight URL color: #080; text-decoration: none; padding: 0 2px;
 highlight URL:hover color: #880; background-color: #222; -moz-border-radius: 5px; cursor: pointer;
 
-source! /home/spencer/.vimperatorrc.local
+source! /home/sbaugh/.vimperatorrc.local
 
 " vim: set ft=vimperator:

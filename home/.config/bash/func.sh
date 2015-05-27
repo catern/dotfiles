@@ -14,4 +14,4 @@ function cdl() { cd "$(dirnamec "$*")"; }
 
 function magit() { emacsclient -e -qt "(magit-status \"$(pwd)\" 'switch-to-buffer)"; }
 
-function nme() { emacsclient -e -qc "(notmuch)" & }
+function nme() { emacsclient -e -qc "(notmuch)"; }

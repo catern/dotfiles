@@ -21,8 +21,11 @@
 (setq my-package-list '(evil 
 			cyberpunk-theme 
 			magit 
+			better-defaults 
+			auctex 
 			;; for org HTML export
-			htmlize))
+			htmlize
+                        ))
 
 ;; install the missing packages
 (dolist (package my-package-list)

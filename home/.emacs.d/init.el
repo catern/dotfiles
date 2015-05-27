@@ -100,9 +100,6 @@
 ; be a little more lenient to tolerate key delay over ssh
 (setq evil-esc-delay .05)
 
-(setq evil-default-cursor t)
-(set-cursor-color "white")
-
 ; usable esc
 (defun minibuffer-keyboard-quit () 
   "Abort recursive edit.

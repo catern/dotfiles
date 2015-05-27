@@ -2,4 +2,4 @@
 GOPATH OVERRIDE=${PATH}:${HOME}/.local
 
 # make any executables in .local/bin available for command-line use
-PATH OVERRIDE=${PATH}:${HOME}/.local/bin
+#PATH OVERRIDE=${PATH}:${HOME}/.local/bin

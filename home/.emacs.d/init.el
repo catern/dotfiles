@@ -38,74 +38,35 @@
 (load-theme 'cyberpunk t)
 ;; enable syntax highlighting
 (global-font-lock-mode t)
-;; show selection
-(transient-mark-mode 1)
 ;; scroll incrementally, not screenfulls at a time
 (setq scroll-conservatively 1000)
-;; menubar, toolbar, scrollbar off
-(menu-bar-mode -1)
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
-;; show matching parens
-(show-paren-mode 1)
 
 ;;;; miscellaneous
-; highlight trailing whitespace
-;; (setq-default show-trailing-whitespace t)
 ; don't cry about visiting my version controlled dotfiles
 (setq vc-follow-symlinks nil)
-; better completions
-(ido-mode t)
-(setq ido-enable-flex-matching t)
-; newline at EOF
-(setq require-final-newline t)
-; if visiting two different files with the same name,
-; label the buffer with the full path
-; instead of name<1> name<2>
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'forward)
-; save position in file
-(require 'saveplace)
-(setq-default save-place t)
-(setq save-place-file (concat user-emacs-directory "saved-positions")) 
-; use X11 clipboard when in graphical mode
-(setq x-select-enable-clipboard t
-      ;x-select-enable-primary t
-      ; put existing X selection in kill ring
-      save-interprogram-paste-before-kill t
-      ) 
 ;; when not compiled with X, this won't be bound
 (if (fboundp 'x-selection-value) 
     (setq interprogram-paste-function 'x-selection-value))
 
-; i don't understand what this does
-(setq mouse-yank-at-point t)
-; include more things in apropos searches
-(setq apropos-do-all t)
-;; some better default bindings
-; better expansion
-(global-set-key (kbd "M-/") 'hippie-expand)
-; better buffer selection
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-; regex-aware searching
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-M-s") 'isearch-forward)
-(global-set-key (kbd "C-M-r") 'isearch-backward)
 ; don't ring the bell
 (setq ring-bell-function 'ignore)
 
-
 ;;;; backups, autosaves and save places
-(setq backup-by-copying t ; don't clobber symlinks
-      auto-save-file-name-transforms `((".*" "~/.emacs.d/autosaves/\\1" t))
-      backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))) ; backup save location
-      delete-old-versions t
-      kept-new-versions 6
-      kept-old-versions 2
-      version-control t) ; use versioned backups
+(setq
+ ;; put backups in .emacs.d, not in the directory of the original file
+ backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
+ ;; since we are putting backups in our homedir, we might need to
+ ;; cross filesystems; a cross-filesystem rename is just a copy so we
+ ;; might as well copy all the time
+ backup-by-copying t
+ ;; keep lots of versions and don't complain about it
+ kept-new-versions 6
+ kept-old-versions 2
+ delete-old-versions t
+ ;; number our backups in order
+ version-control t
+ auto-save-file-name-transforms `((".*" "~/.emacs.d/autosaves/\\1" t))
+ )
 (make-directory "~/.emacs.d/autosaves/" t)
 
 ;;;; C mode

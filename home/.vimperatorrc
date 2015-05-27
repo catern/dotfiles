@@ -1,8 +1,9 @@
 "3.8 (created: 2013/10/13 18:08:56)
 
-command! -description="Open page with mpv" watch :execute "!nohup mpv --force-window \'" + content.location.href + "\' &"
 set nextpattern=^(>>|»)$,\\bnext\\b,^>$,^(>|»),(>|»)$,\\bmore\\b
 set previouspattern=^(<<|«)$,\\bprev|previous\\b,^<$,^(<|«),(<|«)$
+
+command! -description="Open page with mpv" watch :execute "!nohup mpv --force-window --ytdl \'" + content.location.href + "\' &"
 imap <C-k> <Esc><C-k>
 imap <C-j> <Esc><C-j>
 map J <C-Tab>

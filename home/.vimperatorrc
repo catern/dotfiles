@@ -10,7 +10,7 @@ map J <C-Tab>
 map K <C-S-Tab>
 map <C-j> :tabmove<Space>+1<Return>
 map <C-k> :tabmove<Space>-1<Return>
-nmap w :watch<Return><Esc>
+nmap gw :watch<Return><Esc>
 nmap x <C-w>
 set complete=slb
 set "editor=gemx"

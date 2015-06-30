@@ -94,6 +94,7 @@
 (define-key evil-insert-state-map "\C-e" nil)
 (define-key evil-insert-state-map "\C-p" nil)
 (define-key evil-insert-state-map "\C-n" nil)
+(define-key evil-insert-state-map "\C-k" nil)
 
 (define-key evil-normal-state-map "\C-y" nil)
 (define-key evil-normal-state-map "\C-e" nil)

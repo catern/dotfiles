@@ -89,15 +89,10 @@
 (require 'evil)
 (evil-mode 1)
 
-;; unmap some things from insert state..
-(define-key evil-insert-state-map "\C-y" nil)
-(define-key evil-insert-state-map "\C-e" nil)
-(define-key evil-insert-state-map "\C-p" nil)
-(define-key evil-insert-state-map "\C-n" nil)
-(define-key evil-insert-state-map "\C-k" nil)
-
-(define-key evil-normal-state-map "\C-y" nil)
-(define-key evil-normal-state-map "\C-e" nil)
+;; unmap everything but Esc from evil-insert-state-map
+;; This means insert-state will be like vanilla Emacs, except for Esc
+(setq evil-insert-state-map (make-sparse-keymap))
+(define-key evil-insert-state-map [escape] 'evil-normal-state)
 ; be a little more lenient to tolerate key delay over ssh
 (setq evil-esc-delay .05)
 

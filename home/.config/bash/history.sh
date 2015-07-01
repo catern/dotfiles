@@ -1,31 +1,15 @@
+# This file brought to you by http://mywiki.wooledge.org/BashFAQ/088
+# have an extremely large on-disk history of 400MB
+HISTFILESIZE=$((400 * 1000 * 1000))
+# have a large in-memory history of 1MB
+HISTSIZE=$((1000 * 1000))
 # append to the history file, don't overwrite it
 shopt -s histappend
-# make a large history of 10MB
-export HISTSIZE=10000000
-# the difference between HISTSIZE and HISTFILESIZE is pointless
-# define HISTFILESIZE to have the value that HISTSIZE currently has
-# this will not adjust HISTFILESIZE if HISTSIZE changes, it's just a more DRY way to say
-# export HISTFILESIZE=1000000
-export HISTFILESIZE=$HISTSIZE
-# ignore duplicate commands, and erase them from history if they somehow get in
-export HISTCONTROL=ignoredups:erasedups
+# don't ignore any commands in my history
+export HISTCONTROL=
+# log time command was run (but don't print when running "history")
+export HISTTIMEFORMAT=""
+# append to the history after every command
+PROMPT_COMMAND="${PROMPT_COMMAND:-:} ; history -a"
 
-# a bash function to write my bash history to file
-_bash_history_sync() {
-  # append current history to file
-  builtin history -a
-  # the latter two are needed only if you 
-  # clear history
-  # builtin history -c
-  # reload from file
-  # builtin history -r
-}
 
-# history() {
-#   _bash_history_sync
-#   builtin history "$@"
-# }
-
-# execute the history syncing function every time a command finishes (and we see the prompt)
-# LOL HOW DO I RELIABLY APPEND TO PROMPT_COMMAND
-export PROMPT_COMMAND="{ $PROMPT_COMMAND }; _bash_history_sync;"

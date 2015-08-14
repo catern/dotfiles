@@ -6,7 +6,7 @@ Wants=dbus.service
 WorkingDirectory=%h 
 ExecStart=/usr/bin/offlineimap-notify -c /%h/.offlineimaprc
 #send SIGUSR2 to the process so it can gracefully stop syncing
-ExecStop=kill -USR2 $MAINPID
+ExecStop=/usr/bin/kill -USR2 $MAINPID
 TimeoutStopSec=10
 Restart=always 
 

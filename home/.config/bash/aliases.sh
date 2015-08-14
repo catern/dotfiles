@@ -5,6 +5,7 @@ alias kl='kinit -l 10d $USER@ANDREW.CMU.EDU && aklog andrew.cmu.edu'
 
 alias g='git'
 alias e='emx'
+alias vi='emx'
 
 alias atch='tmux attach -d'
 alias dup='nohup urxvt >> ~/.urxvt/nohup.out &'

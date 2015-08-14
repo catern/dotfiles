@@ -98,6 +98,11 @@
 ;; This means insert-state will be like vanilla Emacs, except for Esc
 (setq evil-insert-state-map (make-sparse-keymap))
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
+;; selectively unmap some things from evil-normal-state-map
+;; The vim bindings for these characters are useless and confusing
+(define-key evil-normal-state-map (kbd "C-y") nil)
+(define-key evil-normal-state-map (kbd "C-e") nil)
+
 ; be a little more lenient to tolerate key delay over ssh
 (setq evil-esc-delay .05)
 

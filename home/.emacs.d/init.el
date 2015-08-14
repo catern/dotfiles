@@ -83,6 +83,7 @@
 	(other . "gnu")))
 
 ;;;; cscope
+(cscope-setup)
 (setq cscope-option-do-not-update-database t)
 
 ;;;; tramp

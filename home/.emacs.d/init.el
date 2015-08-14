@@ -50,6 +50,8 @@
 ;; when not compiled with X, this won't be bound
 (if (fboundp 'x-selection-value) 
     (setq interprogram-paste-function 'x-selection-value))
+;; be willing to insert tabs; overrides the better-defaults setting
+(setq-default indent-tabs-mode t)
 
 ; don't ring the bell
 (setq ring-bell-function 'ignore)

@@ -82,6 +82,9 @@
 	(awk-mode . "awk")
 	(other . "gnu")))
 
+;;;; cscope
+(setq cscope-option-do-not-update-database t)
+
 ;;;; tramp
 (require 'tramp) 
 (setq tramp-default-method "ssh")

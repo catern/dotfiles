@@ -19,12 +19,6 @@ shopt -s checkwinsize
 stty -ixon
 stty -ixoff
 
-# to add additional commands to my PROMPT_COMMAND by appending '|| command', it needs to be guaranteed-initialized
-if [ -z "$PROMPT_COMMAND" ];
-then
-    export PROMPT_COMMAND=":;";
-fi
-
 # include any supplementary configs present in .config/bash
 # this simplifies management of a large .bashrc
 MY_BASH_LOCAL_CONFIG_DIR=~/.config/bash

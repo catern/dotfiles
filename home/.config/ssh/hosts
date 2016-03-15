@@ -1,8 +1,3 @@
-# cjd
-Host *.cjd
-    CanonicalizeHostname yes
-    CanonicalDomains catern.com
-
 # CClub hosts
 Host *.club
     CanonicalizeHostname yes

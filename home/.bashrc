@@ -1,5 +1,5 @@
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+[[ $- = *i* ]] || return 0
 
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc

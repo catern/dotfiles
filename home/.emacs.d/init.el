@@ -2,7 +2,8 @@
 ; https://github.com/technomancy/better-defaults
 
 ;;;; bootstrap packages
-(require 'package)
+;; start the package system
+(package-initialize)
 
 ;; add necessary repos
 (setq package-archives
@@ -10,11 +11,8 @@
         ("marmalade" . "http://marmalade-repo.org/packages/")
         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
-;; start the package system
-(package-initialize)
-
-;; load the list of packages available (if necessary)
-(unless package-archive-contents 
+;; download repository metadata
+(unless package-archive-contents
   (package-refresh-contents))
 
 ;; list the packages I want
@@ -32,8 +30,8 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-;; stop emacs from starting the package system again after
-;; finishing reading init.el
+;; Don't run package-initialize again after finishing reading init.el
+;; Just a small startup time optimization
 (setq package-enable-at-startup nil)
 
 ;;;; visuals

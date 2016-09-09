@@ -109,7 +109,7 @@
   )
 
 ;;;; life-logging
-(setq my-buffer-activity-logfile "~/.emacs.d/bufferlog")
+(setq my-buffer-activity-logfile (expand-file-name "~/.emacs.d/bufferlog"))
 
 (defun my-store-name-of-active-buffer ()
   "Stores the name of the active buffer in my-buffer-activity-logfile"

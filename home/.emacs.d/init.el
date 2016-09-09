@@ -103,32 +103,10 @@
 ; do syntax highlighting in #+begin_src blocks
 (setq org-src-fontify-natively t)
 
-
 ;; evil and org mode
 (evil-define-key 'normal org-mode-map 
-  "go" 'org-open-at-point
   (kbd "TAB") 'org-cycle
-  "$" 'org-end-of-line
-  "^" 'org-beginning-of-line
-  "<" 'org-metaleft
-  ">" 'org-metaright
-  "-" 'org-cycle-list-bullet
   )
-
-(define-key evil-normal-state-map "gt" 'org-agenda)
-
-(mapc (lambda (state)
-        (evil-define-key state org-mode-map
-          (kbd "M-l") 'org-metaright
-          (kbd "M-h") 'org-metaleft
-          (kbd "M-k") 'org-metaup
-          (kbd "M-j") 'org-metadown
-          (kbd "M-L") 'org-shiftmetaright
-          (kbd "M-H") 'org-shiftmetaleft
-          (kbd "M-K") 'org-shiftmetaup
-          (kbd "M-J") 'org-shiftmetadown))
-      '(normal insert))
-
 
 ;;;; life-logging
 (setq my-buffer-activity-logfile "~/.emacs.d/bufferlog")

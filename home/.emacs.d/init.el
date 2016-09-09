@@ -97,23 +97,6 @@
 ; be a little more lenient to tolerate key delay over ssh
 (setq evil-esc-delay .05)
 
-;;;; clojure
-(evil-define-key 'normal cider-mode-map 
-  "q" 'cider-popup-buffer-quit-function
-  )
-
-(evil-define-key 'normal cider-doc-mode-map 
-  "q" 'cider-popup-buffer-quit-function
-  ) 
-
-(evil-define-key 'normal cider-stacktrace-mode-map 
-  "q" 'cider-popup-buffer-quit-function
-  ) 
-
-(evil-define-key 'normal cider-popup-buffer-mode-map 
-  "q" 'cider-popup-buffer-quit-function
-  )
-
 ;;;; org-mode configuration
 (require 'org)
 

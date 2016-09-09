@@ -137,7 +137,8 @@
   (my-store-name-of-active-buffer))
 )
 
-(setq lifelog-timer (run-with-timer 1 5 'my-store-lifelog-data))
+(setq lifelog-timer (when (daemonp)
+		      (run-with-timer 1 5 'my-store-lifelog-data)))
 
 
 ;; local.el

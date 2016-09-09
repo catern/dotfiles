@@ -44,9 +44,6 @@
 ;;;; miscellaneous
 ; don't cry about visiting my version controlled dotfiles
 (setq vc-follow-symlinks nil)
-;; when not compiled with X, this won't be bound
-(if (fboundp 'x-selection-value) 
-    (setq interprogram-paste-function 'x-selection-value))
 ;; be willing to insert tabs; overrides the better-defaults setting
 (setq-default indent-tabs-mode t)
 

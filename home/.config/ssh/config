@@ -4,4 +4,4 @@ Host *
     # create the socket at a global path
     ControlPath /tmp/%r@%h:%p
     # leave the connection open after the last shell closes
-    ControlPersist 10m
+    ControlPersist 60

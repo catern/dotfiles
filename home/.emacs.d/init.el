@@ -80,10 +80,6 @@
 (cscope-setup)
 (setq cscope-option-do-not-update-database t)
 
-;;;; tramp
-(require 'tramp) 
-(setq tramp-default-method "ssh")
-
 ;;;; evil configuration
 (require 'undo-tree)
 (require 'evil)

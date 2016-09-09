@@ -83,6 +83,8 @@
 ;;;; evil configuration
 (require 'undo-tree)
 (global-undo-tree-mode 1)
+(setq undo-tree-auto-save-history t
+      undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo-tree-persist")))
 (require 'evil)
 (evil-mode 1)
 
@@ -161,8 +163,6 @@
  '(org-enforce-todo-dependencies t)
  '(safe-local-variable-values (quote ((sh-indent-comment . t))))
  '(send-mail-function (quote sendmail-send-it))
- '(undo-tree-auto-save-history t)
- '(undo-tree-history-directory-alist (quote (("." . "~/.emacs.d/undo-tree-persist")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

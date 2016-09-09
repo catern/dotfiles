@@ -24,7 +24,6 @@ URxvt.iso14755: false
 Urxvt*color4: RoyalBlue
 URxvt*color12: RoyalBlue
 
-! scrollbar - true (default) or fal
 URxvt*scrollBar: false
 
 ! https://github.com/muennich/urxvt-perls
@@ -40,15 +39,4 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: openurl
 
 URxvt.bell-command: notify-send "Beep, Beep"
-
-! lol terminals
-! URxvt.keysym.S-Return: \033[27;2;13~
-! URxvt.keysym.C-Return: \033[27;5;13~
-! URxvt.keysym.C-S-Return: \033[27;6;13~
-! xterm*modifyOtherKeys: 1
-! use cat -v to get keysyms from xterm*modifyOtherKeys
-
-Uxxvt.urgentOnBell: True
-
-! escape to escape c-g lol
-!URxvt.keysym.Escape: \033\007
+URxvt.urgentOnBell: True

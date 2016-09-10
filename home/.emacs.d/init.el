@@ -199,6 +199,8 @@ The initial state for a mode can be set with
 
 (load-file my-local-config-file)
 
+(setq gnus-select-method '(nntp "news.gmane.org"))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

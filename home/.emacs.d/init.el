@@ -69,10 +69,6 @@
 	(awk-mode . "awk")
 	(other . "gnu")))
 
-;;;; cscope
-(cscope-setup)
-(setq cscope-option-do-not-update-database t)
-
 ;;;; evil configuration
 (require 'undo-tree)
 (global-undo-tree-mode 1)

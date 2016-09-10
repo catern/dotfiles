@@ -14,3 +14,5 @@ alias ..='cd ..'
 alias ....='cd ../..'
 alias ......='cd ../../..'
 alias ........='cd ../../../..'
+
+alias topdf='soffice --headless --convert-to pdf'

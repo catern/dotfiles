@@ -153,11 +153,6 @@ The initial state for a mode can be set with
 ; do syntax highlighting in #+begin_src blocks
 (setq org-src-fontify-natively t)
 
-;; evil and org mode
-(evil-define-key 'normal org-mode-map 
-  (kbd "TAB") 'org-cycle
-  )
-
 ;;;; life-logging
 (setq my-buffer-activity-logfile (expand-file-name "~/.emacs.d/bufferlog"))
 

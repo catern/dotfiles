@@ -1,5 +1,5 @@
 ! scrollback buffer lines - 65535 is max on most machines (64 is default)
-URxvt*saveLines: 512
+URxvt*saveLines: 65535
 
 ! font color (default is black)
 URxvt*foreground: White

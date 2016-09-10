@@ -93,9 +93,13 @@
 (setq evil-insert-state-map (make-sparse-keymap))
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
 ;; selectively unmap some things from evil-normal-state-map
-;; The vim bindings for these characters are useless and confusing
+;; The vim bindings for these characters conflict with Emacs bindings
 (define-key evil-normal-state-map (kbd "C-y") nil)
 (define-key evil-normal-state-map (kbd "C-e") nil)
+(define-key evil-normal-state-map (kbd "C-n") nil)
+(define-key evil-normal-state-map (kbd "C-p") nil)
+(define-key evil-motion-state-map (kbd "C-i") nil)
+(define-key evil-motion-state-map (kbd "C-d") nil)
 
 ; be a little more lenient to tolerate key delay over ssh
 (setq evil-esc-delay .05)

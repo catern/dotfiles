@@ -50,23 +50,15 @@
 ; don't ring the bell
 (setq ring-bell-function 'ignore)
 
-;;;; backups, autosaves and save places
+;;;; backup files are automatically created on save
 (setq
- ;; put backups in .emacs.d, not in the directory of the original file
- backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
- ;; since we are putting backups in our homedir, we might need to
- ;; cross filesystems; a cross-filesystem rename is just a copy so we
- ;; might as well copy all the time
- backup-by-copying t
- ;; keep lots of versions and don't complain about it
- kept-new-versions 6
- kept-old-versions 2
- delete-old-versions t
  ;; number our backups in order
  version-control t
- auto-save-file-name-transforms `((".*" "~/.emacs.d/autosaves/\\1" t))
+ ;; backup by copying is slower but safer
+ backup-by-copying t
+ ;; silently delete excess backups
+ delete-old-versions t
  )
-(make-directory "~/.emacs.d/autosaves/" t)
 
 ;;;; C mode
 (setq comment-style 'extra-line)

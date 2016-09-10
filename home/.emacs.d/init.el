@@ -190,6 +190,8 @@ The initial state for a mode can be set with
 (setq lifelog-timer (when (daemonp)
 		      (run-with-timer 1 5 'my-store-lifelog-data)))
 
+;;;; dired
+(setq dired-dwim-target t)
 
 ;; local.el
 (setq my-local-config-file  "~/.emacs.d/local.el")

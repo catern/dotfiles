@@ -16,6 +16,7 @@
 
 ;; list the packages I want
 (setq my-package-list '(evil 
+			evil-surround
 			cyberpunk-theme 
 			magit 
 			better-defaults 
@@ -142,6 +143,9 @@ The initial state for a mode can be set with
 
 ; be a little more lenient to tolerate key delay over ssh
 (setq evil-esc-delay .05)
+
+(require 'evil-surround)
+(global-evil-surround-mode 1)
 
 ;;;; org-mode configuration
 (require 'org)

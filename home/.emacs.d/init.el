@@ -120,12 +120,9 @@
 (setq dired-dwim-target t)
 
 ;; local.el
-(setq my-local-config-file  "~/.emacs.d/local.el")
-
-(unless (file-exists-p my-local-config-file)
-  (write-region "" nil my-local-config-file)) 
-
-(load-file my-local-config-file)
+(setq my-local-config-file "~/.emacs.d/local.el")
+(if (file-exists-p my-local-config-file)
+    (load-file my-local-config-file))
 
 (setq gnus-select-method '(nntp "news.gmane.org"))
 

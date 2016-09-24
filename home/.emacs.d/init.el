@@ -48,6 +48,8 @@
 (setq vc-follow-symlinks nil)
 ;; be willing to insert tabs; overrides the better-defaults setting
 (setq-default indent-tabs-mode t)
+;; find-file-at-point is very useful
+(global-set-key (kbd "C-c f") 'find-file-at-point)
 
 ; don't ring the bell
 (setq ring-bell-function 'ignore)

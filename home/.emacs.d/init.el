@@ -23,6 +23,7 @@
 			auctex 
 			;; for org HTML export
 			htmlize
+			circe
                         ))
 
 ;; install the missing packages
@@ -94,6 +95,35 @@
 (setq my-local-config-file "~/.emacs.d/local.el")
 (if (file-exists-p my-local-config-file)
     (load-file my-local-config-file))
+
+;;;; circe
+(require 'circe)
+(setq
+ ;; don't show joins/parts until the user in question speaks
+ circe-reduce-lurker-spam t
+ ;; show topic changes as a diff
+ circe-format-server-topic "*** Topic change by {userhost}: {topic-diff}")
+;; prompt to send large pastes to a pastebin
+(require 'lui-autopaste)
+(add-hook 'circe-channel-mode-hook 'enable-lui-autopaste)
+;; set circe-network-options
+(load-file "~/.emacs.d/private.el")
+
+;;;; tracking
+(require 'tracking)
+;; ignore any circe channel buffer, except if I'm highlighted
+(setq tracking-ignored-buffers '(("#" circe-highlight-nick-face)))
+
+;;;; lui
+;; use native emacs word wrapping/reflowing
+(setq lui-time-stamp-position 'right-margin
+      lui-fill-type nil)
+(defun my-lui-setup ()
+  (setq fringes-outside-margins t
+	right-margin-width 8
+	word-wrap t
+	wrap-prefix "    "))
+(add-hook 'lui-mode-hook 'my-lui-setup)
 
 (setq gnus-select-method '(nntp "news.gmane.org"))
 

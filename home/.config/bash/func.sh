@@ -1,3 +1,8 @@
+#### aliases and functions
+alias g='git'
+alias atch='tmux attach -d'
+alias topdf='soffice --headless --convert-to pdf'
+
 # print a nice ruler
 function hr() { printf '=%.0s' $(seq $COLUMNS); printf '\n'; }
 

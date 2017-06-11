@@ -71,6 +71,10 @@
 	(other . "gnu")))
 (setq compilation-scroll-output 'first-error)
 
+;;;; gud
+(require 'gdb-mi)
+(setq gdb-display-io-nopopup t)
+
 ;;;; undo-tree
 (require 'undo-tree)
 (global-undo-tree-mode 1)

@@ -17,8 +17,8 @@
   (package-refresh-contents))
 
 ;; list the packages I want
-(setq my-package-list '(evil 
-			evil-surround
+(setq my-package-list '(
+			undo-tree
 			cyberpunk-theme 
 			magit 
 			better-defaults 
@@ -77,9 +77,6 @@
 (global-undo-tree-mode 1)
 (setq undo-tree-auto-save-history t
       undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo-tree-persist")))
-
-;;;; evil
-(load-file "~/.emacs.d/evil.el")
 
 ;;;; org-mode configuration
 (require 'org)

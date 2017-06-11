@@ -2,7 +2,7 @@
 function say() { mplayer -really-quiet "http://translate.google.com/translate_tts?tl=en&q=$*"; } 
 
 # print a nice ruler
-function hr() { printf '=%.0s' $(seq $COLUMNS); }
+function hr() { printf '=%.0s' $(seq $COLUMNS); printf '\n'; }
 
 #function ts() { xdg-open $(tracker-search --disable-color -l 1 --disable-snippets "$*" 2> /dev/null | sed -n 2p); }
 

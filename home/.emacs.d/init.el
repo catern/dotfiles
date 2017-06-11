@@ -78,6 +78,9 @@
 
 ;;;; org-mode configuration
 (require 'org)
+(setq org-agenda-files '("~/org/"))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
 
 ; do syntax highlighting in #+begin_src blocks
 (setq org-src-fontify-natively t)

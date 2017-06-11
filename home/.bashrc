@@ -21,14 +21,12 @@ stty -ixoff
 
 # include any supplementary configs present in .config/bash
 # this simplifies management of a large .bashrc
-MY_BASH_LOCAL_CONFIG_DIR=~/.config/bash
-if [[ -d $MY_BASH_LOCAL_CONFIG_DIR ]]; then 
-    for file in $MY_BASH_LOCAL_CONFIG_DIR/*; do 
-        source "$file" 
+local_config_dir=~/.config/bash
+if [[ -d $local_config_dir ]]; then
+    for file in $local_config_dir/*; do
+        source "$file"
     done
 fi
-# give a hoot, don't pollute (the environment); unset this variable now that we're done
-unset MY_BASH_LOCAL_CONFIG_DIR
 
 # use homeshick
 # https://github.com/andsens/homeshick

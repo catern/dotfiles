@@ -15,3 +15,7 @@ function cdl() { cd "$(dirnamec "$*")"; }
 function magit() { emacsclient -e -qt "(magit-status \"$(pwd)\")"; }
 
 function nme() { emacsclient -e -qc "(notmuch)"; }
+
+function nanos() {
+    date -d@$(echo $1 | sed 's/.\{9\}$/.&/') --rfc-3339=ns | sed 's/.\{12\}$//'
+}

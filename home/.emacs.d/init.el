@@ -129,6 +129,9 @@
 
 (setq gnus-select-method '(nntp "news.gmane.org"))
 
+;;;; magit
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

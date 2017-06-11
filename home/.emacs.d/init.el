@@ -69,6 +69,7 @@
 	(java-mode . "java")
 	(awk-mode . "awk")
 	(other . "gnu")))
+(setq compilation-scroll-output 'first-error)
 
 ;;;; undo-tree
 (require 'undo-tree)

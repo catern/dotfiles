@@ -8,10 +8,21 @@
 ;; add necessary repos
 (setq package-archives
       '(("gnu" . "https://elpa.gnu.org/packages/")
+        ("melpa-stable" . "https://stable.melpa.org/packages/")
         ("melpa" . "https://melpa.org/packages/")
         ("org" . "http://orgmode.org/elpa/")
         ("elpy" . "https://jorgenschaefer.github.io/packages/")
-	))
+	)
+      ;; prioritize package repositories based on the quality of the packages
+      package-archive-priorities
+      '(("gnu" . 100)
+        ("elpy" . 70)
+        ("org" . 50)
+        ("melpa-stable" . 20)
+        ("melpa" . 0)
+        )
+      package-menu-hide-low-priority t
+      )
 
 ;; download repository metadata
 (unless package-archive-contents

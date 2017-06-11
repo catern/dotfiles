@@ -10,6 +10,7 @@
       '(("gnu" . "https://elpa.gnu.org/packages/")
         ("melpa" . "https://melpa.org/packages/")
         ("org" . "http://orgmode.org/elpa/")
+        ("elpy" . "https://jorgenschaefer.github.io/packages/")
 	))
 
 ;; download repository metadata
@@ -26,6 +27,7 @@
         ;; for org HTML export
         htmlize
         circe
+        elpy
 ))
 
 ;; install the missing packages
@@ -135,6 +137,9 @@
 ;;;; magit
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;;;; elpy
+(elpy-enable)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -17,21 +17,19 @@
   (package-refresh-contents))
 
 ;; list the packages I want
-(setq my-package-list '(
-			undo-tree
-			cyberpunk-theme 
-			magit 
-			better-defaults 
-			auctex 
-			;; for org HTML export
-			htmlize
-			circe
-                        ))
+(setq package-selected-packages '(
+        undo-tree
+        cyberpunk-theme
+        magit
+        better-defaults
+        auctex
+        ;; for org HTML export
+        htmlize
+        circe
+))
 
 ;; install the missing packages
-(dolist (package my-package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+(package-install-selected-packages)
 
 ;; Don't run package-initialize again after finishing reading init.el
 ;; Just a small startup time optimization

@@ -1,9 +1,8 @@
-# Detect if we have a Nix installation, and source it if so.
-multiuser_nix_sh=/usr/local/etc/profile.d/nix.sh
-singleuser_nix_sh=$HOME/.nix-profile/etc/profile.d/nix.sh
-if test -e $multiuser_nix_sh; then
+# If we own /nix, this must be a single-user install
+# This check is done automatically in newer Nix.
+if test -O /nix/; then
+    export NIX_REMOTE=local
+else
     export NIX_REMOTE=daemon
-    source $multiuser_nix_sh
-elif test -e $singleuser_nix_sh; then
-    source $singleuser_nix_sh
 fi
+source $HOME/.nix-profile/etc/profile.d/nix.sh

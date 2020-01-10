@@ -98,9 +98,6 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 
-; do syntax highlighting in #+begin_src blocks
-(setq org-src-fontify-natively t)
-
 ;;;; dired
 (setq dired-dwim-target t)
 

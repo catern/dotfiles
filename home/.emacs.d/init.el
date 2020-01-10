@@ -158,6 +158,14 @@
 	    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
 	      (ggtags-mode 1))))
 
+;;;; shell hack
+(require 'cl)
+(require 'project)
+(defun my-project-shell ()
+  (interactive)
+  (let ((default-directory (first (project-roots (project-current 'prompt)))))
+    (shell (concat "*shell-" (file-name-nondirectory (directory-file-name default-directory))))))
+(global-set-key (kbd "C-c i") 'my-project-shell)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

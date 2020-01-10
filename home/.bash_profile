@@ -22,7 +22,7 @@
 # should be inherited by the rest of the session.
 profile_dir=$HOME/.config/profile
 if [[ -d $profile_dir ]]; then
-    for file in $profile_dir/*; do
+    for file in $profile_dir/*.sh; do
         source "$file"
     done
 fi

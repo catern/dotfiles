@@ -158,6 +158,12 @@
 ;; make the default omit, omit dotfiles
 (setq dired-omit-files (rx line-start "." (not (any ".")) (zero-or-more anything) line-end))
 
+;;;; ggtags
+(add-hook 'c-mode-common-hook
+	  (lambda ()
+	    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+	      (ggtags-mode 1))))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

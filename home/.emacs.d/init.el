@@ -48,6 +48,9 @@
 ;; Just a small startup time optimization
 (setq package-enable-at-startup nil)
 
+;; Enable better-defaults
+(require 'better-defaults)
+
 ;;;; visuals
 ;; enable cyberpunk theme yeah!
 (load-theme 'cyberpunk t)

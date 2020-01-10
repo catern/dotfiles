@@ -155,6 +155,9 @@
 	    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
 	      (ggtags-mode 1))))
 
+;;;; eww
+(setq eww-search-prefix "https://www.google.com/search?q=")
+
 ;;;; shell hack
 (require 'cl)
 (require 'project)

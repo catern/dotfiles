@@ -1,27 +1,34 @@
 {
   allowUnfree = true;
-  allowBroken = true;
   packageOverrides = pkgs: with pkgs; rec {
-    myEmacs = emacsWithPackages (epkgs: (with epkgs; [
-      better-defaults
-      undo-tree
-      cyberpunk-theme
-      magit
-      circe
-      csv-mode
-      yaml-mode
-      toml-mode
-      rust-mode
-      nix-mode
-      geiser
-      restclient
-      ess
-      intero
-      nyan-mode
-      slime-volleyball
-      ix
-      tuareg
-      merlin
-    ]));
+    my = {
+      emacs = pkgs.emacsWithPackages (epkgs: (with epkgs; [
+        auctex
+        better-defaults
+        circe
+        csv-mode
+        cyberpunk-theme
+        direnv
+        ess
+        excorporate
+        geiser
+        ggtags
+        graphviz-dot-mode
+        htmlize
+        intero
+        magit
+        nix-mode
+        notmuch
+        nyan-mode
+        restclient
+        rust-mode
+        scala-mode
+        slime-volleyball
+        toml-mode
+        tuareg
+        undo-tree
+        yaml-mode
+      ]));
+    };
   };
 }

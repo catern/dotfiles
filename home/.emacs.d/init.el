@@ -21,6 +21,9 @@
 (setq vc-follow-symlinks nil)
 ;; find-file-at-point is very useful
 (global-set-key (kbd "C-c f") 'find-file-at-point)
+;; there are many bindings that I like to use, which use minibuffers;
+;; so let's make it possible to use those bindings when already in a minibuffer
+(setq enable-recursive-minibuffers t)
 
 ; don't ring the bell
 (setq ring-bell-function 'ignore)

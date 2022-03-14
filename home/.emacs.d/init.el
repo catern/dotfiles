@@ -118,6 +118,12 @@
 ;;;; eww
 (setq eww-search-prefix "https://www.google.com/search?q=")
 
+;; TODO should try using diary for this?
+(defun jrnl ()
+  "Open my journal"
+  (interactive)
+  (find-file (format-time-string "~/Documents/journal/%Y-%m-%d.org")))
+
 ;; environment variables for subprocesses; we want these only in Emacs
 (setenv "PAGER" "cat")
 (setenv "EDITOR" "emacsclient")

@@ -2,7 +2,7 @@
   (import ./emacs-overlay)
   (self: super: {
     my = {
-      base_emacs = (super.emacsGit.override {
+      base_emacs = (super.emacsUnstable.override {
           withGTK2 = false;
           withGTK3 = false;
           withMotif = false;

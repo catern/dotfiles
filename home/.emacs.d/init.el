@@ -51,10 +51,6 @@
 (require 'gdb-mi)
 (setq gdb-display-io-nopopup t)
 
-;;;; undo-tree
-(require 'undo-tree)
-(global-undo-tree-mode 1)
-
 ;;;; org-mode configuration
 (require 'org)
 (setq org-agenda-files '("~/org/"))

@@ -101,7 +101,8 @@
 
 ;;;; magit
 (require 'magit)
-(global-set-key (kbd "C-x g") 'magit-status)
+(require 'project)
+(require 'magit-extras)
 
 ;;;; dired
 (require 'dired-x)

@@ -86,6 +86,9 @@
 ;; ignore any circe channel buffer, except if I'm highlighted
 (setq tracking-ignored-buffers '(("#" circe-highlight-nick-face)))
 
+;;;; windmove
+(windmove-default-keybindings)
+
 ;;;; lui
 ;; use native emacs word wrapping/reflowing
 (setq lui-time-stamp-position 'right-margin

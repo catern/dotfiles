@@ -89,6 +89,11 @@
 ;;;; windmove
 (windmove-default-keybindings)
 
+;;;; tab-bar-mode
+(tab-bar-mode)
+(setq tab-bar-select-tab-modifiers '(control)
+      tab-bar-show 1)
+
 ;;;; lui
 ;; use native emacs word wrapping/reflowing
 (setq lui-time-stamp-position 'right-margin

@@ -118,6 +118,10 @@
 ;;;; eww
 (setq eww-search-prefix "https://www.google.com/search?q=")
 
+;; environment variables for subprocesses; we want these only in Emacs
+(setenv "PAGER" "cat")
+(setenv "EDITOR" "emacsclient")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

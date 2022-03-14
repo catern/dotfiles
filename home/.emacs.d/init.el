@@ -97,7 +97,7 @@
 	wrap-prefix "    "))
 (add-hook 'lui-mode-hook 'my-lui-setup)
 
-(setq gnus-select-method '(nntp "news.gmane.org"))
+(setq gnus-select-method '(nntp "news.gmane.io"))
 
 ;;;; magit
 (require 'magit)

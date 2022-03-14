@@ -18,3 +18,7 @@
   co = checkout
   lg = log -p
   l = log
+
+[user]
+	name = Spencer Baugh
+	email = sbaugh@catern.com

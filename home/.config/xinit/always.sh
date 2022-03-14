@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 run_if_exists() {
     if [ -f "$1" ]
     then 
@@ -6,4 +6,4 @@ run_if_exists() {
     fi
 }
 
-run_if_exists /usr/bin/xset r rate 270 40
+xset r rate 270 40

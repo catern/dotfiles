@@ -1,15 +1,7 @@
-#!/bin/bash
-run_if_exists() {
-    if [ -f "$1" ]
-    then 
-        $* &
-    fi
-}
-
+#!/usr/bin/env bash
 # needed for virt-manager
-run_if_exists /usr/lib/lxpolkit/lxpolkit
 # a notification daemon
-run_if_exists /usr/bin/dunst
+dunst
 # start the urxvt server
-run_if_exists /usr/bin/urxvtd -q -o -f
+urxvtd -q -o -f
 

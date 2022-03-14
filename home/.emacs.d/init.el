@@ -7,6 +7,7 @@
 
 ;; Enable better-defaults
 (require 'better-defaults)
+(load custom-file)
 
 ;;;; visuals
 ;; enable cyberpunk theme yeah!

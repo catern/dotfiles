@@ -1,49 +1,9 @@
 ;;;; config sources
 ; https://github.com/technomancy/better-defaults
 
-;;;; bootstrap packages
-;; start the package system
-(package-initialize)
-
-;; add necessary repos
-(setq package-archives
-      '(("gnu" . "https://elpa.gnu.org/packages/")
-        ("melpa-stable" . "https://stable.melpa.org/packages/")
-        ("melpa" . "https://melpa.org/packages/")
-        ("org" . "http://orgmode.org/elpa/")
-	)
-      ;; prioritize package repositories based on the quality of the packages
-      package-archive-priorities
-      '(("gnu" . 100)
-        ("org" . 50)
-        ("melpa-stable" . 20)
-        ("melpa" . 0)
-        )
-      package-menu-hide-low-priority t
-      )
-
-;; download repository metadata
-(unless package-archive-contents
-  (package-refresh-contents))
-
-;; list the packages I want
-(setq package-selected-packages '(
-        undo-tree
-        cyberpunk-theme
-        magit
-        better-defaults
-        auctex
-        ;; for org HTML export
-        htmlize
-        circe
-))
-
-;; install the missing packages
-(package-install-selected-packages)
-
-;; Don't run package-initialize again after finishing reading init.el
-;; Just a small startup time optimization
-(setq package-enable-at-startup nil)
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
 
 ;; Enable better-defaults
 (require 'better-defaults)

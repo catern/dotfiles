@@ -127,6 +127,25 @@
 ;;;; eww
 (setq eww-search-prefix "https://www.google.com/search?q=")
 
+;;;; nice little customization for presentations
+(require 'page-ext)
+(defun my-backward-page (&optional count)
+  "Like backward-page, but moves page even if narrowed, re-narrowing appropriately"
+  (interactive)
+  (if (buffer-narrowed-p)
+      (pages-previous-page count)
+    (backward-page count)))
+
+(defun my-forward-page (&optional count)
+  "Like forward-page, but moves page even if narrowed, re-narrowing appropriately"
+  (interactive)
+  (if (buffer-narrowed-p)
+      (pages-next-page count)
+    (forward-page)))
+
+(define-key ctl-x-map "[" 'my-backward-page)
+(define-key ctl-x-map "]" 'my-forward-page)
+
 ;; TODO should try using diary for this?
 (defun jrnl ()
   "Open my journal"

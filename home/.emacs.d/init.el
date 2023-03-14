@@ -50,6 +50,8 @@
 ;; there are many bindings that I like to use, which use minibuffers;
 ;; so let's make it possible to use those bindings when already in a minibuffer
 (setq enable-recursive-minibuffers t)
+;; this is pointlessly small by default
+(setq yank-menu-length 250)
 
 ; don't ring the bell
 (setq ring-bell-function 'ignore)

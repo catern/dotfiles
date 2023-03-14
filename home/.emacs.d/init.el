@@ -79,10 +79,6 @@
 ;;;; lifelog
 (load-file "~/.emacs.d/lifelog.el")
 
-;; local.el
-(setq my-local-config-file "~/.emacs.d/local.el")
-(if (file-exists-p my-local-config-file)
-    (load-file my-local-config-file))
 
 ;;;; circe
 (require 'circe)
@@ -95,7 +91,6 @@
 (require 'lui-autopaste)
 (add-hook 'circe-channel-mode-hook 'enable-lui-autopaste)
 ;; set circe-network-options
-(load-file "~/.emacs.d/private.el")
 
 ;;;; tracking
 (require 'tracking)
@@ -191,3 +186,6 @@
 (put 'narrow-to-page 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+;; stateful usage of customize plus local and private settings go here
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)

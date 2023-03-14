@@ -3,7 +3,15 @@
 
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+	     '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+(setq package-selected-packages
+      '(slime-volleyball circe
+	notmuch mentor htmlize graphviz-dot-mode
+	ggtags envrc cyberpunk-theme csv-mode auctex
+	nix-mode))
+
+(package-install-selected-packages)
 
 ;; Enable better-defaults
 (require 'better-defaults)

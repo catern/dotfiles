@@ -101,9 +101,10 @@
 (windmove-default-keybindings)
 
 ;;;; tab-bar-mode
-(tab-bar-mode)
+(require 'tab-bar)
 (setq tab-bar-select-tab-modifiers '(control)
       tab-bar-show 1)
+(tab-bar-mode)
 
 ;;;; lui
 ;; use native emacs word wrapping/reflowing

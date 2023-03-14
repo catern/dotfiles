@@ -40,11 +40,13 @@
 ;; scroll incrementally, not screenfulls at a time
 (setq scroll-conservatively 1000)
 
+;;;; ffap
+(ffap-bindings)
+(setq ffap-require-prefix t)
+
 ;;;; miscellaneous
 ; don't cry about visiting my version controlled dotfiles
 (setq vc-follow-symlinks nil)
-;; find-file-at-point is very useful
-(global-set-key (kbd "C-c f") 'find-file-at-point)
 ;; there are many bindings that I like to use, which use minibuffers;
 ;; so let's make it possible to use those bindings when already in a minibuffer
 (setq enable-recursive-minibuffers t)

@@ -70,8 +70,9 @@
 ;;;; org-mode configuration
 (require 'org)
 (setq org-agenda-files '("~/org/"))
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
 
 ;;;; dired
 (setq dired-dwim-target t)

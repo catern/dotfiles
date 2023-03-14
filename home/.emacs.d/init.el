@@ -13,9 +13,26 @@
 
 (package-install-selected-packages)
 
-;; Enable better-defaults
-(require 'better-defaults)
-(load custom-file)
+;;;; Configurations stolen from better-defaults
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+(save-place-mode 1)
+
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "M-z") 'zap-up-to-char)
+
+(savehist-mode 1)
+(setq
+ uniquify-buffer-name-style 'forward
+ save-interprogram-paste-before-kill t
+ mouse-yank-at-point t
+ load-prefer-newer t
+ ediff-window-setup-function 'ediff-setup-windows-plain)
+
+ ;; backup by copying is slower but safer
+(setq backup-by-copying t
+      backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
 
 ;;;; visuals
 ;; enable cyberpunk theme yeah!

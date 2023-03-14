@@ -37,8 +37,6 @@
 ;;;; visuals
 ;; enable cyberpunk theme yeah!
 (load-theme 'cyberpunk t)
-;; enable syntax highlighting
-(global-font-lock-mode t)
 ;; scroll incrementally, not screenfulls at a time
 (setq scroll-conservatively 1000)
 
@@ -53,16 +51,6 @@
 
 ; don't ring the bell
 (setq ring-bell-function 'ignore)
-
-;;;; backup files are automatically created on save
-(setq
- ;; number our backups in order
- version-control t
- ;; backup by copying is slower but safer
- backup-by-copying t
- ;; silently delete excess backups
- delete-old-versions t
- )
 
 ;;;; C mode
 (setq comment-style 'extra-line)

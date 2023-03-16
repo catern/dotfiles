@@ -1,6 +1,0 @@
-[Unit]
-Description=Unison file synchronizer
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/unison sync -batch

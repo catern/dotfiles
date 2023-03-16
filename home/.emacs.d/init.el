@@ -1,15 +1,5 @@
-;;;; config sources
-; https://github.com/technomancy/better-defaults
-
-(require 'package)
-(add-to-list 'package-archives
-	     '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-
 (setq package-selected-packages
-      '(slime-volleyball circe
-	notmuch mentor htmlize graphviz-dot-mode
-	ggtags envrc cyberpunk-theme csv-mode auctex
-	nix-mode))
+      '(magit cyberpunk-theme csv-mode))
 
 (package-install-selected-packages)
 
@@ -83,23 +73,6 @@
 (load-file "~/.emacs.d/lifelog.el")
 
 
-;;;; circe
-(require 'circe)
-(setq
- ;; don't show joins/parts until the user in question speaks
- circe-reduce-lurker-spam t
- ;; show topic changes as a diff
- circe-format-server-topic "*** Topic change by {userhost}: {topic-diff}")
-;; prompt to send large pastes to a pastebin
-(require 'lui-autopaste)
-(add-hook 'circe-channel-mode-hook 'enable-lui-autopaste)
-;; set circe-network-options
-
-;;;; tracking
-(require 'tracking)
-;; ignore any circe channel buffer, except if I'm highlighted
-(setq tracking-ignored-buffers '(("#" circe-highlight-nick-face)))
-
 ;;;; windmove
 (windmove-default-keybindings)
 
@@ -108,17 +81,6 @@
 (setq tab-bar-select-tab-modifiers '(control)
       tab-bar-show 1)
 (tab-bar-mode)
-
-;;;; lui
-;; use native emacs word wrapping/reflowing
-(setq lui-time-stamp-position 'right-margin
-      lui-fill-type nil)
-(defun my-lui-setup ()
-  (setq fringes-outside-margins t
-	right-margin-width 8
-	word-wrap t
-	wrap-prefix "    "))
-(add-hook 'lui-mode-hook 'my-lui-setup)
 
 (setq gnus-select-method '(nntp "news.gmane.io"))
 

@@ -46,13 +46,10 @@
 ; don't ring the bell
 (setq ring-bell-function 'ignore)
 
-;;;; C mode
-(setq comment-style 'extra-line)
-(setq c-default-style 
-      '((c-mode . "linux") 
-	(java-mode . "java")
-	(awk-mode . "awk")
-	(other . "gnu")))
+;; jump to the first error we see when we compile.
+;; otherwise we'd have to watch and wait until it appears before we hit M-g M-n
+;; (hmm, maybe M-g M-n should be enhanced to automatically have this behavior,
+;;  when the error buffer is empty?)
 (setq compilation-scroll-output 'first-error)
 
 ;;;; gud

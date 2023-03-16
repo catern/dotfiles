@@ -58,7 +58,9 @@
 
 ;;;; org-mode configuration
 (require 'org)
-(setq org-agenda-files '("~/org/"))
+(setq
+ org-agenda-files '("~/org/")
+ org-enforce-todo-dependencies t)
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
@@ -128,22 +130,6 @@
 ;; environment variables for subprocesses; we want these only in Emacs
 (setenv "PAGER" "cat")
 (setenv "EDITOR" "emacsclient")
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("7fa9dc3948765d7cf3d7a289e40039c2c64abf0fad5c616453b263b601532493" "dc6c0b236bb09603babadd87329aa857e286ee36715811519d4bfe6278ee4367" default)))
- '(org-enforce-todo-dependencies t)
- '(safe-local-variable-values (quote ((sh-indent-comment . t))))
- '(send-mail-function (quote sendmail-send-it)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)

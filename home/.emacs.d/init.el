@@ -57,9 +57,11 @@
 (setq gdb-display-io-nopopup t)
 
 ;;;; org-mode configuration
-(require 'org)
 (setq
  org-agenda-files '("~/org/")
+ org-archive-subtree-save-file-p nil
+ org-log-done 'time
+ org-html-prefer-user-labels t
  org-enforce-todo-dependencies t)
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)

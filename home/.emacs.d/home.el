@@ -1,7 +1,7 @@
 (add-to-list 'package-archives
 	     '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
-(dolist (package '(circe notmuch mentor htmlize nix-mode auctex ggtags envrc))
+(dolist (package '(circe notmuch mentor htmlize nix-mode auctex envrc))
   (add-to-list 'package-selected-packages package))
 
 (package-install-selected-packages)
@@ -35,4 +35,3 @@
 	word-wrap t
 	wrap-prefix "    "))
 (add-hook 'lui-mode-hook 'my-lui-setup)
-

@@ -85,6 +85,8 @@
 ;;;; magit
 (require 'magit)
 (require 'magit-extras)
+;; this is expensive to compute
+(remove-hook 'magit-status-headers-hook #'magit-insert-tags-header)
 
 ;;;; dired
 ;; make the default omit, omit dotfiles

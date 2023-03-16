@@ -31,7 +31,7 @@
 (setq scroll-conservatively 1000)
 
 ;;;; ffap
-(ffap-bindings)
+(global-set-key [remap find-file] 'find-file-at-point)
 (setq ffap-require-prefix t)
 
 ;;;; miscellaneous
@@ -53,7 +53,6 @@
 (setq compilation-scroll-output 'first-error)
 
 ;;;; gud
-(require 'gdb-mi)
 (setq gdb-display-io-nopopup t)
 
 ;;;; org-mode configuration
@@ -78,22 +77,19 @@
 (windmove-default-keybindings)
 
 ;;;; tab-bar-mode
-(require 'tab-bar)
 (setq tab-bar-select-tab-modifiers '(control)
       tab-bar-show 1)
-(tab-bar-mode)
 
 (setq gnus-select-method '(nntp "news.gmane.io"))
 
 ;;;; magit
 (require 'magit)
-(require 'project)
 (require 'magit-extras)
 
 ;;;; dired
-(require 'dired-x)
 ;; make the default omit, omit dotfiles
 (setq dired-omit-files (rx line-start "." (not (any ".")) (zero-or-more anything) line-end))
+(add-hook 'dired-mode-hook #'dired-omit-mode)
 
 ;;;; eww
 (setq eww-search-prefix "https://www.google.com/search?q=")
